@@ -4,7 +4,7 @@
   "timezone": "Asia/Singapore",
   "as_of": "2026-11-26",
   "source": "Metricool",
-  "pulled_at": "2026-11-26T03:05:00+08:00",
+  "pulled_at": "2026-11-26T04:05:00+08:00",
   "data_url": "",
   "youtube_source": "Windsor.ai"
  },
@@ -807,8 +807,8 @@
    "comments": 0,
    "shares": 1,
    "saves": null,
-   "watch_seconds": 180.0,
-   "avg_watch_seconds": 16.3636,
+   "watch_seconds": 480.0,
+   "avg_watch_seconds": 19.2,
    "completion_rate": null,
    "media": "https://static.metricool.com/planner/202611/8247679-file-12558694310699675199.mp4"
   },
