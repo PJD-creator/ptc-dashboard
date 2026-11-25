@@ -216,13 +216,41 @@ def apply_windsor_youtube(raw, daily, posts, today):
             pub = str(v.get("published_at") or "")
             posts[vid] = {"key": vid, "platform": "youtube", "published": pub if pub.endswith("Z") or not pub else pub + ("Z" if "T" in pub else "T00:00:00Z"),
                           "title": v.get("video_title") or "Untitled", "url": v.get("videourl") or f"https://www.youtube.com/shorts/{vid}",
-                          "thumb": v.get("videoimage") or f"https://i.ytimg.com/vi/{vid}/hqdefault.jpg",
+                          "thumb": f"https://i.ytimg.com/vi/{vid}/hqdefault.jpg",
                           "views": int(num(v.get("video_view_count")) or 0), "likes": int(num(v.get("video_like_count")) or 0),
                           "comments": int(num(v.get("video_comment_count")) or 0), "shares": int(num(w.get("shares")) or 0) if w else None,
                           "saves": None, "watch_seconds": None if mins is None else round(mins * 60, 1),
                           "avg_watch_seconds": num(w.get("average_view_duration")), "completion_rate": None}
     daily.sort(key=lambda r: (r["date"], r["platform"]))
     return True
+
+def carry_over(data, prev):
+    """Keep the last good figures when a source briefly returns nothing (e.g. after a reconnect)."""
+    if not prev: return
+    old = {(r["platform"], r["date"]): r for r in prev.get("daily", [])}
+    new = {(r["platform"], r["date"]): r for r in data["daily"]}
+    for k, o in old.items():
+        n = new.get(k)
+        if n is None:
+            data["daily"].append(o); continue
+        for f in ("views", "likes", "comments", "shares", "saves"):
+            if not n.get(f) and o.get(f): n[f] = o[f]
+        if n.get("followers_total") is None and o.get("followers_total") is not None: n["followers_total"] = o["followers_total"]
+    data["daily"].sort(key=lambda r: (r["date"], r["platform"]))
+    have = {p["key"] for p in data["posts"]}
+    old_posts = {p["key"]: p for p in prev.get("posts", [])}
+    for p in data["posts"]:
+        o = old_posts.get(p["key"])
+        if o:
+            for f in ("views", "likes", "comments", "shares", "saves", "watch_seconds", "avg_watch_seconds", "completion_rate", "thumb", "media"):
+                if p.get(f) in (None, 0) and o.get(f) not in (None, 0): p[f] = o[f]
+    data["posts"] += [o for k, o in old_posts.items() if k not in have]
+    data["posts"].sort(key=lambda p: p.get("published") or "", reverse=True)
+    for u in data["uploads"]:
+        if u.get("metrics") is None and u.get("post_url"):
+            o = old_posts.get(key_of(u["post_url"]))
+            if o and o.get("views") is not None:
+                u["metrics"] = {f: o.get(f) or 0 for f in ("views", "likes", "comments", "shares")}
 
 def main():
     raw, out_file = sys.argv[1], sys.argv[2]
@@ -241,6 +269,11 @@ def main():
     data["uploads"] = build_uploads(raw, posts)
     data["posts"] = build_gallery(posts, data["uploads"])
     data["best_times"] = build_best_times(raw)
+    try:
+        with open(out_file) as f: prev = json.load(f)
+    except Exception:
+        prev = None
+    carry_over(data, prev)
     with open(out_file, "w") as f: json.dump(data, f, ensure_ascii=False, indent=1)
     print(f"Wrote {out_file}: {len(daily)} daily rows, {len(data['uploads'])} uploads, {len(data['posts'])} posts, best times for {', '.join(data['best_times']) or 'none'}")
 
