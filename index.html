@@ -430,7 +430,7 @@ function renderWS(){
     const saves=ps.filter(x=>x.saves!=null),sv=saves.reduce((s,x)=>s+x.saves,0);
     const comp=ps.filter(x=>x.completion_rate!=null);
     const bestW=watched.sort((a,b)=>(b.avg_watch_seconds||0)-(a.avg_watch_seconds||0))[0];
-    const cell=(label,val,na)=>`<div><div class="k">${label}</div>${val==null?`<div class="na">${na||'Not reported yet'}</div>`:`<div class="v">${val}</div>`}</div>`;
+    const cell=(label,val,na)=>`<div><div class="k">${label}</div>${val==null?`<div class="na">${na||(p==='tiktok'?'Coming soon':'Not reported yet')}</div>`:`<div class="v">${val}</div>`}</div>`;
     return `<article class="wc" style="--c:${PL[p].c}"><h3>${PL[p].name}</h3><div class="wgrid">
       ${cell('Total watch time',watched.length?dur(wt):null)}
       ${cell('Avg watch per view',(()=>{const a=ps.filter(x=>x.avg_watch_seconds!=null&&x.views),v=a.reduce((s,x)=>s+x.views,0);return v?dur(a.reduce((s,x)=>s+x.avg_watch_seconds*x.views,0)/v):null})())}
