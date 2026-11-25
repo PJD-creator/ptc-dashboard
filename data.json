@@ -4,7 +4,7 @@
   "timezone": "Asia/Singapore",
   "as_of": "2026-11-25",
   "source": "Metricool",
-  "pulled_at": "2026-11-25T18:04:00+08:00",
+  "pulled_at": "2026-11-25T19:05:00+08:00",
   "data_url": "",
   "youtube_source": "Windsor.ai"
  },
@@ -48,8 +48,80 @@
    "saves": 0
   },
   {
+   "date": "2026-11-10",
+   "platform": "tiktok",
+   "followers_total": null,
+   "views": 0,
+   "likes": 0,
+   "comments": 0,
+   "shares": 0,
+   "followers_gained": 0,
+   "followers_lost": 0,
+   "saves": 0
+  },
+  {
+   "date": "2026-11-11",
+   "platform": "tiktok",
+   "followers_total": null,
+   "views": 0,
+   "likes": 0,
+   "comments": 0,
+   "shares": 0,
+   "followers_gained": 0,
+   "followers_lost": 0,
+   "saves": 0
+  },
+  {
+   "date": "2026-11-12",
+   "platform": "tiktok",
+   "followers_total": null,
+   "views": 0,
+   "likes": 0,
+   "comments": 0,
+   "shares": 0,
+   "followers_gained": 0,
+   "followers_lost": 0,
+   "saves": 0
+  },
+  {
+   "date": "2026-11-13",
+   "platform": "tiktok",
+   "followers_total": null,
+   "views": 0,
+   "likes": 0,
+   "comments": 0,
+   "shares": 0,
+   "followers_gained": 0,
+   "followers_lost": 0,
+   "saves": 0
+  },
+  {
+   "date": "2026-11-14",
+   "platform": "tiktok",
+   "followers_total": null,
+   "views": 0,
+   "likes": 0,
+   "comments": 0,
+   "shares": 0,
+   "followers_gained": 0,
+   "followers_lost": 0,
+   "saves": 0
+  },
+  {
    "date": "2026-11-15",
    "platform": "instagram",
+   "followers_total": null,
+   "views": 0,
+   "likes": 0,
+   "comments": 0,
+   "shares": 0,
+   "followers_gained": 0,
+   "followers_lost": 0,
+   "saves": 0
+  },
+  {
+   "date": "2026-11-15",
+   "platform": "tiktok",
    "followers_total": null,
    "views": 0,
    "likes": 0,
@@ -72,8 +144,32 @@
    "saves": 0
   },
   {
+   "date": "2026-11-16",
+   "platform": "tiktok",
+   "followers_total": null,
+   "views": 0,
+   "likes": 0,
+   "comments": 0,
+   "shares": 0,
+   "followers_gained": 0,
+   "followers_lost": 0,
+   "saves": 0
+  },
+  {
    "date": "2026-11-17",
    "platform": "instagram",
+   "followers_total": null,
+   "views": 0,
+   "likes": 0,
+   "comments": 0,
+   "shares": 0,
+   "followers_gained": 0,
+   "followers_lost": 0,
+   "saves": 0
+  },
+  {
+   "date": "2026-11-17",
+   "platform": "tiktok",
    "followers_total": null,
    "views": 0,
    "likes": 0,
@@ -98,6 +194,18 @@
   {
    "date": "2026-11-18",
    "platform": "instagram",
+   "followers_total": null,
+   "views": 0,
+   "likes": 0,
+   "comments": 0,
+   "shares": 0,
+   "followers_gained": 0,
+   "followers_lost": 0,
+   "saves": 0
+  },
+  {
+   "date": "2026-11-18",
+   "platform": "tiktok",
    "followers_total": null,
    "views": 0,
    "likes": 0,
@@ -255,10 +363,10 @@
    "date": "2026-11-23",
    "platform": "tiktok",
    "followers_total": 11,
-   "views": 201,
-   "likes": 7,
+   "views": 388,
+   "likes": 13,
    "comments": 0,
-   "shares": 0,
+   "shares": 2,
    "followers_gained": 0,
    "followers_lost": 0,
    "saves": 0
@@ -277,10 +385,34 @@
   },
   {
    "date": "2026-11-24",
+   "platform": "tiktok",
+   "followers_total": 12,
+   "views": 0,
+   "likes": 0,
+   "comments": 0,
+   "shares": 0,
+   "followers_gained": 1,
+   "followers_lost": 0,
+   "saves": 0
+  },
+  {
+   "date": "2026-11-24",
    "platform": "youtube",
    "followers_total": 9,
    "views": 0,
    "likes": 0,
+   "comments": 0,
+   "shares": 0,
+   "followers_gained": 0,
+   "followers_lost": 0,
+   "saves": 0
+  },
+  {
+   "date": "2026-11-25",
+   "platform": "tiktok",
+   "followers_total": null,
+   "views": 405,
+   "likes": 26,
    "comments": 0,
    "shares": 0,
    "followers_gained": 0,
@@ -325,7 +457,12 @@
    "error": null,
    "post_url": "https://www.tiktok.com/@ptc.sg/video/7712009692406353153",
    "media": "https://static.metricool.com/planner/202611/8247679-file-15895185945668755199.mp4",
-   "metrics": null
+   "metrics": {
+    "views": 41,
+    "likes": 5,
+    "comments": 0,
+    "shares": 0
+   }
   },
   {
    "id": "441353555-youtube",
@@ -369,7 +506,12 @@
    "error": null,
    "post_url": "https://www.tiktok.com/@ptc.sg/video/7711926432980618517",
    "media": "https://static.metricool.com/planner/202611/8247679-file-7684431048995777046.mp4",
-   "metrics": null
+   "metrics": {
+    "views": 364,
+    "likes": 21,
+    "comments": 0,
+    "shares": 0
+   }
   },
   {
    "id": "441161384-youtube",
@@ -419,10 +561,10 @@
    "post_url": "https://www.tiktok.com/@ptc.sg/video/7711266736175107336",
    "media": "https://static.metricool.com/planner/202611/8247679-file-12558694310699675199.mp4",
    "metrics": {
-    "views": 201,
-    "likes": 7,
+    "views": 388,
+    "likes": 13,
     "comments": 0,
-    "shares": 0
+    "shares": 2
    }
   },
   {
@@ -489,23 +631,6 @@
    "media": "https://static.metricool.com/planner/202611/8247679-file-9993542132721920084.mp4"
   },
   {
-   "key": "7712009692406353153",
-   "platform": "tiktok",
-   "published": "2026-11-25T15:36:00+08:00",
-   "title": "Blue Flower Ring 💙",
-   "url": "https://www.tiktok.com/@ptc.sg/video/7712009692406353153",
-   "thumb": null,
-   "views": null,
-   "likes": null,
-   "comments": null,
-   "shares": null,
-   "saves": null,
-   "watch_seconds": null,
-   "avg_watch_seconds": null,
-   "completion_rate": null,
-   "media": "https://static.metricool.com/planner/202611/8247679-file-15895185945668755199.mp4"
-  },
-  {
    "key": "DgJbqW6ClCJ",
    "platform": "instagram",
    "published": "2026-11-25T10:13:00+08:00",
@@ -521,23 +646,6 @@
    "avg_watch_seconds": null,
    "completion_rate": null,
    "media": "https://static.metricool.com/planner/202611/8247679-file-5442569300860847470.mp4"
-  },
-  {
-   "key": "7711926432980618517",
-   "platform": "tiktok",
-   "published": "2026-11-25T10:13:00+08:00",
-   "title": "Leaf Halo Ring ✨",
-   "url": "https://www.tiktok.com/@ptc.sg/video/7711926432980618517",
-   "thumb": null,
-   "views": null,
-   "likes": null,
-   "comments": null,
-   "shares": null,
-   "saves": null,
-   "watch_seconds": null,
-   "avg_watch_seconds": null,
-   "completion_rate": null,
-   "media": "https://static.metricool.com/planner/202611/8247679-file-7684431048995777046.mp4"
   },
   {
    "key": "yswePmy1t9o",
@@ -557,6 +665,23 @@
    "media": "https://static.metricool.com/planner/202611/8247679-file-14522259418541003857.mp4"
   },
   {
+   "key": "7712009692406353153",
+   "platform": "tiktok",
+   "published": "2026-11-25T07:36:16Z",
+   "title": "Blue Flower Ring 💙",
+   "url": "https://www.tiktok.com/@ptc.sg/video/7712009692406353153",
+   "thumb": "https://p16-common-sign.tiktokcdn.com/tos-alisg-p-4863-sg/okQDWDC3hFzRfGOvLifGDCnSEgkfNDSIWAfF7H~tplv-tiktokx-cropcenter-q:300:400:q70.webp?dr=14782&refresh_token=7fa77387&x-expires=1795687200&x-signature=79xJHS5P944jPd486emU4rMW6oo%3D&t=bacd0480&ps=933b5bde&shp=d05b14bd&shcp=8aecc5ac&idc=my&biz_tag=tt_video&s=TIKTOK_FOR_DEVELOPER&sc=cover",
+   "views": 41,
+   "likes": 5,
+   "comments": 0,
+   "shares": 0,
+   "saves": null,
+   "watch_seconds": 127.0,
+   "avg_watch_seconds": 3.1,
+   "completion_rate": 0.0004349999874830246,
+   "media": "https://static.metricool.com/planner/202611/8247679-file-15895185945668755199.mp4"
+  },
+  {
    "key": "2EaMN62nqH8",
    "platform": "youtube",
    "published": "2026-11-25T02:13:44Z",
@@ -574,21 +699,21 @@
    "media": "https://static.metricool.com/planner/202611/8247679-file-11911696167300542856.mp4"
   },
   {
-   "key": "7711266736175107336",
+   "key": "7711926432980618517",
    "platform": "tiktok",
-   "published": "2026-11-23T15:33:00+08:00",
-   "title": "Floral Vine Ring 🌿",
-   "url": "https://www.tiktok.com/@ptc.sg/video/7711266736175107336",
-   "thumb": "https://p16-common-sign.tiktokcdn.com/x.webp?x-expires=1795539600",
-   "views": 201,
-   "likes": 7,
-   "comments": null,
-   "shares": null,
+   "published": "2026-11-25T02:13:16Z",
+   "title": "Leaf Halo Ring ✨",
+   "url": "https://www.tiktok.com/@ptc.sg/video/7711926432980618517",
+   "thumb": "https://p16-common-sign.tiktokcdn.com/tos-alisg-p-4863-sg/ogIvAfkMGgA9DoIQCLnEE8BUiBBFIePArvQURQ~tplv-tiktokx-cropcenter-q:300:400:q70.webp?dr=14782&refresh_token=8325e211&x-expires=1795687200&x-signature=UPzXtUahDjHIjsdL38KmZKVHYN8%3D&t=bacd0480&ps=933b5bde&shp=d05b14bd&shcp=8aecc5ac&idc=my&biz_tag=tt_video&s=TIKTOK_FOR_DEVELOPER&sc=cover",
+   "views": 364,
+   "likes": 21,
+   "comments": 0,
+   "shares": 0,
    "saves": null,
-   "watch_seconds": null,
-   "avg_watch_seconds": null,
-   "completion_rate": null,
-   "media": "https://static.metricool.com/planner/202611/8247679-file-12558694310699675199.mp4"
+   "watch_seconds": 1299.0,
+   "avg_watch_seconds": 3.57,
+   "completion_rate": 0.0002659999951720238,
+   "media": "https://static.metricool.com/planner/202611/8247679-file-7684431048995777046.mp4"
   },
   {
    "key": "DgE2mMaj5Gf",
@@ -605,6 +730,23 @@
    "watch_seconds": 62.7,
    "avg_watch_seconds": 3.3,
    "completion_rate": null,
+   "media": "https://static.metricool.com/planner/202611/8247679-file-12558694310699675199.mp4"
+  },
+  {
+   "key": "7711266736175107336",
+   "platform": "tiktok",
+   "published": "2026-11-23T07:33:17Z",
+   "title": "Floral Vine Ring 🌿",
+   "url": "https://www.tiktok.com/@ptc.sg/video/7711266736175107336",
+   "thumb": "https://p16-common-sign.tiktokcdn.com/tos-alisg-p-4863-sg/o0rNcCD9gBsEfEi9zB6IcEaAyAvBgqfk6Y7Bik~tplv-tiktokx-cropcenter-q:300:400:q70.webp?dr=14782&refresh_token=4993f380&x-expires=1795687200&x-signature=OGnWAtWL6%2FdIJfz%2BjxDXeFOxfxE%3D&t=bacd0480&ps=933b5bde&shp=d05b14bd&shcp=8aecc5ac&idc=my&biz_tag=tt_video&s=TIKTOK_FOR_DEVELOPER&sc=cover",
+   "views": 388,
+   "likes": 13,
+   "comments": 0,
+   "shares": 2,
+   "saves": null,
+   "watch_seconds": 1249.0,
+   "avg_watch_seconds": 3.22,
+   "completion_rate": 0.00022500000894069673,
    "media": "https://static.metricool.com/planner/202611/8247679-file-12558694310699675199.mp4"
   },
   {
