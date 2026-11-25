@@ -1,0 +1,376 @@
+{
+ "meta": {
+  "brand": "Precious Jewellery Designs",
+  "timezone": "Asia/Singapore",
+  "as_of": "2026-11-25",
+  "source": "Metricool",
+  "pulled_at": "2026-11-25T12:00:00+08:00",
+  "data_url": ""
+ },
+ "accounts": [
+  {
+   "platform": "instagram",
+   "handle": "@ptc.sg"
+  },
+  {
+   "platform": "tiktok",
+   "handle": "@ptc.sg"
+  },
+  {
+   "platform": "youtube",
+   "handle": "PTC channel"
+  }
+ ],
+ "daily": [
+  {
+   "date": "2026-09-29",
+   "platform": "youtube",
+   "followers_total": null,
+   "views": 1,
+   "likes": 0,
+   "comments": 0,
+   "shares": 0,
+   "followers_gained": 0,
+   "followers_lost": 0
+  },
+  {
+   "date": "2026-10-15",
+   "platform": "youtube",
+   "followers_total": null,
+   "views": 1,
+   "likes": 0,
+   "comments": 0,
+   "shares": 0,
+   "followers_gained": 0,
+   "followers_lost": 0
+  },
+  {
+   "date": "2026-11-15",
+   "platform": "instagram",
+   "followers_total": null,
+   "views": 0,
+   "likes": 0,
+   "comments": 0,
+   "shares": 0,
+   "followers_gained": 0,
+   "followers_lost": 0
+  },
+  {
+   "date": "2026-11-16",
+   "platform": "instagram",
+   "followers_total": null,
+   "views": 0,
+   "likes": 0,
+   "comments": 0,
+   "shares": 0,
+   "followers_gained": 0,
+   "followers_lost": 0
+  },
+  {
+   "date": "2026-11-17",
+   "platform": "instagram",
+   "followers_total": null,
+   "views": 0,
+   "likes": 0,
+   "comments": 0,
+   "shares": 0,
+   "followers_gained": 0,
+   "followers_lost": 0
+  },
+  {
+   "date": "2026-11-17",
+   "platform": "youtube",
+   "followers_total": null,
+   "views": 1,
+   "likes": 0,
+   "comments": 0,
+   "shares": 0,
+   "followers_gained": 0,
+   "followers_lost": 0
+  },
+  {
+   "date": "2026-11-18",
+   "platform": "instagram",
+   "followers_total": null,
+   "views": 0,
+   "likes": 0,
+   "comments": 0,
+   "shares": 0,
+   "followers_gained": 0,
+   "followers_lost": 0
+  },
+  {
+   "date": "2026-11-19",
+   "platform": "instagram",
+   "followers_total": 144,
+   "views": 0,
+   "likes": 0,
+   "comments": 0,
+   "shares": 0,
+   "followers_gained": 0,
+   "followers_lost": 0
+  },
+  {
+   "date": "2026-11-19",
+   "platform": "tiktok",
+   "followers_total": 11,
+   "views": 0,
+   "likes": 0,
+   "comments": 0,
+   "shares": 0,
+   "followers_gained": 0,
+   "followers_lost": 0
+  },
+  {
+   "date": "2026-11-20",
+   "platform": "instagram",
+   "followers_total": 144,
+   "views": 0,
+   "likes": 0,
+   "comments": 0,
+   "shares": 0,
+   "followers_gained": 0,
+   "followers_lost": 0
+  },
+  {
+   "date": "2026-11-20",
+   "platform": "tiktok",
+   "followers_total": 11,
+   "views": 0,
+   "likes": 0,
+   "comments": 0,
+   "shares": 0,
+   "followers_gained": 0,
+   "followers_lost": 0
+  },
+  {
+   "date": "2026-11-20",
+   "platform": "youtube",
+   "followers_total": 7,
+   "views": 0,
+   "likes": 0,
+   "comments": 0,
+   "shares": 0,
+   "followers_gained": 0,
+   "followers_lost": 0
+  },
+  {
+   "date": "2026-11-21",
+   "platform": "instagram",
+   "followers_total": 144,
+   "views": 0,
+   "likes": 0,
+   "comments": 0,
+   "shares": 0,
+   "followers_gained": 0,
+   "followers_lost": 0
+  },
+  {
+   "date": "2026-11-21",
+   "platform": "tiktok",
+   "followers_total": 11,
+   "views": 0,
+   "likes": 0,
+   "comments": 0,
+   "shares": 0,
+   "followers_gained": 0,
+   "followers_lost": 0
+  },
+  {
+   "date": "2026-11-21",
+   "platform": "youtube",
+   "followers_total": 7,
+   "views": 0,
+   "likes": 0,
+   "comments": 0,
+   "shares": 0,
+   "followers_gained": 0,
+   "followers_lost": 0
+  },
+  {
+   "date": "2026-11-22",
+   "platform": "instagram",
+   "followers_total": 144,
+   "views": 6,
+   "likes": 0,
+   "comments": 0,
+   "shares": 0,
+   "followers_gained": 0,
+   "followers_lost": 0
+  },
+  {
+   "date": "2026-11-22",
+   "platform": "tiktok",
+   "followers_total": 11,
+   "views": 0,
+   "likes": 0,
+   "comments": 0,
+   "shares": 0,
+   "followers_gained": 0,
+   "followers_lost": 0
+  },
+  {
+   "date": "2026-11-22",
+   "platform": "youtube",
+   "followers_total": 7,
+   "views": 0,
+   "likes": 0,
+   "comments": 0,
+   "shares": 0,
+   "followers_gained": 0,
+   "followers_lost": 0
+  },
+  {
+   "date": "2026-11-23",
+   "platform": "instagram",
+   "followers_total": 144,
+   "views": 25,
+   "likes": 1,
+   "comments": 0,
+   "shares": 0,
+   "followers_gained": 0,
+   "followers_lost": 0
+  },
+  {
+   "date": "2026-11-23",
+   "platform": "tiktok",
+   "followers_total": 11,
+   "views": 201,
+   "likes": 7,
+   "comments": 0,
+   "shares": 0,
+   "followers_gained": 0,
+   "followers_lost": 0
+  },
+  {
+   "date": "2026-11-23",
+   "platform": "youtube",
+   "followers_total": 9,
+   "views": 0,
+   "likes": 0,
+   "comments": 0,
+   "shares": 0,
+   "followers_gained": 2,
+   "followers_lost": 0
+  },
+  {
+   "date": "2026-11-24",
+   "platform": "youtube",
+   "followers_total": 9,
+   "views": 0,
+   "likes": 0,
+   "comments": 0,
+   "shares": 0,
+   "followers_gained": 0,
+   "followers_lost": 0
+  }
+ ],
+ "uploads": [
+  {
+   "id": "441161313-instagram",
+   "platform": "instagram",
+   "title": "A halo of leaves, a heart of light ✨🍃",
+   "workflow": "Metricool · auto-publish",
+   "scheduled_at": "2026-11-25T10:13:00+08:00",
+   "posted_at": "2026-11-25T10:13:00+08:00",
+   "status": "success",
+   "error": null,
+   "post_url": "https://www.instagram.com/reel/DgJbqW6ClCJ/",
+   "metrics": null
+  },
+  {
+   "id": "441161359-tiktok",
+   "platform": "tiktok",
+   "title": "Leaf Halo Ring ✨",
+   "workflow": "Metricool · auto-publish",
+   "scheduled_at": "2026-11-25T10:13:00+08:00",
+   "posted_at": "2026-11-25T10:13:00+08:00",
+   "status": "success",
+   "error": null,
+   "post_url": "https://www.tiktok.com/@ptc.sg/video/7711926432980618517",
+   "metrics": null
+  },
+  {
+   "id": "441161384-youtube",
+   "platform": "youtube",
+   "title": "Leaf Halo Ring ✨ | Precious Jewellery Designs",
+   "workflow": "Metricool · auto-publish",
+   "scheduled_at": "2026-11-25T10:13:00+08:00",
+   "posted_at": "2026-11-25T10:13:00+08:00",
+   "status": "success",
+   "error": null,
+   "post_url": "https://www.youtube.com/shorts/2EaMN62nqH8",
+   "metrics": null
+  },
+  {
+   "id": "438385947-instagram",
+   "platform": "instagram",
+   "title": "Nature, set in gold 🌿✨",
+   "workflow": "Metricool · auto-publish",
+   "scheduled_at": "2026-11-23T15:33:00+08:00",
+   "posted_at": "2026-11-23T15:33:00+08:00",
+   "status": "success",
+   "error": null,
+   "post_url": "https://www.instagram.com/reel/DgE2mMaj5Gf/",
+   "metrics": {
+    "views": 26,
+    "likes": 1,
+    "comments": 0,
+    "shares": 0
+   }
+  },
+  {
+   "id": "438385947-tiktok",
+   "platform": "tiktok",
+   "title": "Floral Vine Ring 🌿",
+   "workflow": "Metricool · auto-publish",
+   "scheduled_at": "2026-11-23T15:33:00+08:00",
+   "posted_at": "2026-11-23T15:33:00+08:00",
+   "status": "success",
+   "error": null,
+   "post_url": "https://www.tiktok.com/@ptc.sg/video/7711266736175107336",
+   "metrics": {
+    "views": 201,
+    "likes": 7,
+    "comments": 0,
+    "shares": 0
+   }
+  },
+  {
+   "id": "438378884-instagram",
+   "platform": "instagram",
+   "title": "Nature, set in gold 🌿✨",
+   "workflow": "Metricool · manual publish",
+   "scheduled_at": "2026-11-23T15:22:00+08:00",
+   "posted_at": "2026-11-23T15:22:00+08:00",
+   "status": "success",
+   "error": null,
+   "post_url": null,
+   "metrics": null
+  },
+  {
+   "id": "438378884-tiktok",
+   "platform": "tiktok",
+   "title": "Floral Vine Ring 🌿",
+   "workflow": "Metricool · manual publish",
+   "scheduled_at": "2026-11-23T15:22:00+08:00",
+   "posted_at": "2026-11-23T15:22:00+08:00",
+   "status": "success",
+   "error": null,
+   "post_url": null,
+   "metrics": null
+  },
+  {
+   "id": "438378884-youtube",
+   "platform": "youtube",
+   "title": "Floral Vine Ring 🌿 | Precious Jewellery Designs",
+   "workflow": "Metricool · manual publish",
+   "scheduled_at": "2026-11-23T15:22:00+08:00",
+   "posted_at": "2026-11-23T15:22:00+08:00",
+   "status": "success",
+   "error": null,
+   "post_url": "https://www.youtube.com/shorts/_F0h9Cy6pSA",
+   "metrics": null
+  }
+ ]
+}

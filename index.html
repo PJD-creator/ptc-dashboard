@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PTC Social Dashboard</title>
+<meta name="description" content="Live overview of PTC uploads and channel performance on Instagram, TikTok and YouTube.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;800&display=swap" rel="stylesheet">
+
+<!-- ============================================================
+     YOUR DATA GOES HERE
+     Leave `daily` and `uploads` empty to see generated sample data.
+     Fill them with rows from your automation (n8n / Make / Zapier /
+     scripts) to make the dashboard show your real numbers.
+
+     daily row (one per platform per day):
+       { "date": "2026-11-24", "platform": "instagram",
+         "views": 8120, "likes": 512, "comments": 41, "shares": 63,
+         "followers_gained": 38, "followers_lost": 6, "followers_total": 14210 }
+
+     uploads row (one per automated upload attempt):
+       { "id": "IG-261124-1830", "platform": "instagram",
+         "title": "Ring top-view reveal", "workflow": "n8n · IG Reels",
+         "scheduled_at": "2026-11-24T18:30:00+08:00",
+         "posted_at": "2026-11-24T18:32:00+08:00",
+         "status": "success",            // success | failed | pending
+         "error": null,                   // text when status = failed
+         "post_url": "https://www.instagram.com/p/...",
+         "metrics": { "views": 12400, "likes": 860, "comments": 52, "shares": 97 } }
+     ============================================================ -->
+<script>
+window.DASHBOARD_DATA = {
+  "meta": {"brand": "Precious Jewellery Designs", "timezone": "Asia/Singapore", "data_url": "data.json"},
+  "accounts": [], "daily": [], "uploads": []
+};
+</script>
+
+<style>
+/* VOICE work: an operations desk for three channels, dense and calm
+   IDEA a newspaper markets page: the finding as headline, figures with their change, one wide chart
+   PICTURE the trend chart, one line per channel in that channel's colour, with hover readout
+   COLOUR white or near-black ground, dark ink; Instagram magenta, TikTok cyan, YouTube red as the only hues
+   TYPE Libre Franklin 800 for titles and figures, Libre Franklin 400-600 for text
+   LAYOUT title + filters, KPI row, chart beside automation health, platform columns, upload log; stacks under 900px */
+:root{color-scheme:light dark;
+--bg:light-dark(#ffffff,#0d0e11);
+--panel:light-dark(#f5f5f7,#16181d);
+--ink:light-dark(#15161a,#eceef2);
+--mute:light-dark(#5b606c,#a0a6b2);
+--line:light-dark(#e3e4e8,#2a2d35);
+--ig:light-dark(#c72a73,#ff5aa0);
+--tt:light-dark(#00838a,#2ee6e6);
+--yt:light-dark(#d40000,#ff5c5c);
+--ok:light-dark(#18794e,#3ccf8e);
+--bad:light-dark(#b42318,#ff8a7a);
+--wait:light-dark(#8f5600,#f2b84b);
+}
+:root[data-theme=light]{color-scheme:light}
+:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font:16px/1.5 "Libre Franklin",system-ui,sans-serif;overflow-x:clip}
+.wrap{max-width:1240px;margin:0 auto;padding:clamp(20px,3vw,40px) max(4vw,16px) 48px}
+h1{font-size:clamp(30px,4.2vw,46px);line-height:1.05;letter-spacing:-.02em;font-weight:800;margin:0 0 8px;text-wrap:balance}
+h2{font-size:20px;line-height:1.2;font-weight:800;margin:0;letter-spacing:-.01em}
+.sub{color:var(--mute);margin:0;font-size:15px}
+.note{display:inline-block;margin-top:8px;font-size:13px;color:var(--wait)}
+.head{display:grid;gap:20px;align-items:end;grid-template-columns:minmax(0,1fr) auto;padding-bottom:20px;border-bottom:2px solid var(--ink)}
+.ctl{display:flex;flex-wrap:wrap;gap:10px;justify-content:flex-end}
+.seg{display:flex;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--panel)}
+.seg button,.chip,.btn{font:inherit;font-size:14px;font-weight:600;color:var(--ink);background:none;border:0;min-height:44px;padding:0 14px;cursor:pointer}
+.seg button+button{border-left:1px solid var(--line)}
+.seg button[aria-pressed=true]{background:var(--ink);color:var(--bg)}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{border:1px solid var(--line);border-radius:999px;display:flex;align-items:center;gap:8px;background:var(--bg)}
+.chip[aria-pressed=false]{color:var(--mute)}
+.chip[aria-pressed=false] i{opacity:.25}
+i.dot{width:10px;height:10px;border-radius:50%;display:inline-block;flex:none}
+button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid color-mix(in srgb,var(--tt) 60%,transparent);outline-offset:2px}
+button:hover{filter:brightness(1.08)}
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-bottom:1px solid var(--line)}
+.kpi{padding:20px 20px 18px 0}
+.kpi+.kpi{padding-left:20px;border-left:1px solid var(--line)}
+.kpi .l{font-size:14px;color:var(--mute);font-weight:500}
+.kpi .v{font-size:clamp(30px,3.4vw,42px);font-weight:800;letter-spacing:-.02em;line-height:1.1;margin:4px 0;white-space:nowrap}
+.d{font-size:14px;font-weight:600;white-space:nowrap}
+.d.up{color:var(--ok)}.d.dn{color:var(--bad)}.d.flat{color:var(--mute)}
+.split{display:flex;height:6px;border-radius:3px;overflow:hidden;margin-top:12px;background:var(--line)}
+.split span{height:100%}
+.vs{font-size:13px;color:var(--mute)}
+.top{display:grid;grid-template-columns:minmax(0,2.1fr) minmax(0,1fr);gap:28px;padding:28px 0;border-bottom:1px solid var(--line)}
+.bar{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center;margin-bottom:12px}
+.seg.sm button{min-height:36px;font-size:13px;padding:0 12px}
+.fig{position:relative;min-height:340px}
+.fig>svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+svg text{font-family:"Libre Franklin",system-ui,sans-serif;paint-order:stroke;stroke:var(--bg);stroke-width:4px}
+.ax{font-size:12px;fill:var(--mute)}
+.lab{font-size:13px;font-weight:700}
+.grid{stroke:var(--line);stroke-width:1}
+.hair{stroke:var(--mute);stroke-dasharray:3 3}
+.tip{position:absolute;pointer-events:none;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-size:13px;box-shadow:0 4px 14px rgba(0,0,0,.12);display:none;min-width:150px;z-index:2}
+.tip b{display:block;margin-bottom:4px}
+.tip div{display:flex;justify-content:space-between;gap:14px;white-space:nowrap}
+.health{background:var(--panel);border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:16px}
+.big{font-size:48px;font-weight:800;letter-spacing:-.02em;line-height:1}
+.meter{display:flex;height:10px;border-radius:5px;overflow:hidden;background:var(--line)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:13px;color:var(--mute)}
+.legend span{display:flex;align-items:center;gap:6px;white-space:nowrap}
+.rows{display:grid;gap:10px}
+.row{display:grid;grid-template-columns:6.5em minmax(0,1fr) auto;gap:10px;align-items:center;font-size:14px}
+.row .track{height:6px;background:var(--line);border-radius:3px;overflow:hidden}
+.row .track span{display:block;height:100%}
+.row .n{white-space:nowrap;font-variant-numeric:tabular-nums;color:var(--mute)}
+.box{border-top:1px solid var(--line);padding-top:12px;font-size:14px}
+.box .k{color:var(--mute);font-size:13px}
+.err{color:var(--bad)}
+.plats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;padding:28px 0;border-bottom:1px solid var(--line)}
+.pc{border-top:4px solid var(--c);padding-top:14px;display:flex;flex-direction:column;gap:12px}
+.pc header{display:flex;justify-content:space-between;gap:8px;align-items:baseline;flex-wrap:wrap}
+.pc .h{color:var(--mute);font-size:14px}
+.fol{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.fol .v{font-size:34px;font-weight:800;letter-spacing:-.02em;line-height:1}
+.spark{width:100%;height:56px;display:block}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;border-block:1px solid var(--line);padding:10px 0}
+.stats .k{font-size:12px;color:var(--mute)}
+.stats .v{font-weight:800;font-size:18px;white-space:nowrap}
+.stats .d{font-size:12px}
+.topp{background:var(--panel);border-radius:10px;padding:12px 14px;font-size:14px}
+.topp .k{font-size:12px;color:var(--mute);font-weight:600}
+.topp .t{font-weight:700;margin:2px 0}
+.empty{color:var(--mute);font-size:14px}
+.log{padding-top:28px}
+.logbar{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center;margin:12px 0}
+input[type=search]{font:inherit;font-size:16px;min-height:44px;padding:0 12px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);width:min(100%,260px)}
+.scroll{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th{text-align:left;font-size:13px;color:var(--mute);font-weight:600;padding:8px 10px;border-bottom:1px solid var(--ink);white-space:nowrap}
+td{padding:10px;border-bottom:1px solid var(--line);vertical-align:top}
+td.t{white-space:nowrap;font-variant-numeric:tabular-nums}
+.pt{font-weight:600}
+.meta{font-size:12px;color:var(--mute)}
+.badge{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;white-space:nowrap}
+.badge::before{content:"";width:8px;height:8px;border-radius:50%;background:currentColor}
+.s-success{color:var(--ok)}.s-failed{color:var(--bad)}.s-pending{color:var(--wait)}
+.more{margin-top:12px;border:1px solid var(--line);border-radius:10px}
+details{margin-top:36px;border-top:2px solid var(--ink);padding-top:16px}
+summary{cursor:pointer;font-weight:800;font-size:18px;min-height:44px;display:flex;align-items:center}
+details p{color:var(--mute);font-size:15px;max-width:70ch}
+pre{background:var(--panel);border-radius:10px;padding:14px;font-size:13px;overflow-x:auto;max-height:320px}
+textarea{width:100%;min-height:160px;font:13px/1.45 ui-monospace,Menlo,monospace;padding:12px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink)}
+.acts{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;align-items:center}
+.btn{border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+.btn.pri{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.msg{font-size:14px}
+.foot{margin-top:24px;font-size:13px;color:var(--mute)}
+@media(max-width:900px){.top{grid-template-columns:minmax(0,1fr)}.plats{grid-template-columns:minmax(0,1fr)}.head{grid-template-columns:minmax(0,1fr)}.ctl{justify-content:flex-start}.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.kpi:nth-child(3){padding-left:0;border-left:0}.kpi:nth-child(n+3){border-top:1px solid var(--line)}}
+@media(max-width:600px){.fig{min-height:280px}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}table{font-size:13px}.stack thead{display:none}.stack tr{display:grid;padding-block:10px;border-bottom:1px solid var(--line)}.stack td{display:flex;justify-content:space-between;gap:12px;border:0;padding:3px 0;text-align:right}.stack td::before{content:attr(data-l);color:var(--mute);font-size:12px;text-align:left;flex:none}.stack td:empty{display:none}}
+@media(prefers-reduced-motion:no-preference){.split span,.meter span,.row .track span{transition:width .4s ease}}
+</style>
+<script>new MutationObserver(()=>{for(const c of document.querySelectorAll('.stack td:not([data-l])')){let i=0,p=c;while(p=p.previousElementSibling)i+=p.colSpan;c.dataset.l=c.closest('table').rows[0].cells[i]?.textContent||''}}).observe(document,{childList:true,subtree:true})</script>
+</head>
+<body>
+<div class="wrap">
+
+<header class="head">
+  <div>
+    <h1 id="title">Loading your channels…</h1>
+    <p class="sub" id="subtitle"></p>
+    <span class="note" id="sampleNote" hidden>Sample data. Replace it with your own at the bottom of the page, or in the DASHBOARD_DATA block in the code.</span>
+  </div>
+  <div class="ctl">
+    <div class="seg" id="range" role="group" aria-label="Date range">
+      <button data-r="7">7 days</button><button data-r="30">30 days</button><button data-r="90">90 days</button><button data-r="all">All time</button>
+    </div>
+    <div class="chips" id="plats" role="group" aria-label="Platforms"></div>
+  </div>
+</header>
+
+<section class="kpis" id="kpis" aria-label="Summary"></section>
+
+<section class="top">
+  <div id="trendBlock">
+    <div class="bar">
+      <h2 id="chartTitle">Daily views by platform</h2>
+      <div class="seg sm" id="metric" role="group" aria-label="Chart metric">
+        <button data-m="views">Views</button><button data-m="er">Engagement rate</button><button data-m="net">Net followers</button>
+      </div>
+    </div>
+    <div class="fig" id="trend"><svg aria-label="Trend chart"></svg><div class="tip" id="tip"></div></div>
+  </div>
+  <aside class="health" id="health" aria-label="Automation health"></aside>
+</section>
+
+<section class="plats" id="platCards" aria-label="Platform breakdown"></section>
+
+<section class="log" id="logSec">
+  <h2>Upload and automation log</h2>
+  <div class="logbar">
+    <div class="seg sm" id="status" role="group" aria-label="Status filter"></div>
+    <input type="search" id="q" placeholder="Search title, ID or error" aria-label="Search uploads">
+  </div>
+  <div class="scroll">
+    <table class="stack" id="logTable">
+      <thead><tr><th>Post</th><th>Platform</th><th>Scheduled</th><th>Posted</th><th>Status</th><th>Result</th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+  <button class="btn more" id="more" hidden>Show more</button>
+</section>
+
+<details id="own" hidden>
+  <summary>Use your own data</summary>
+  <p>Paste JSON in the shape below (or choose a .json file exported by your workflow), then press Load. Nothing leaves your browser. To make it permanent, paste the same rows into the DASHBOARD_DATA block at the top of the code.</p>
+  <pre id="schema"></pre>
+  <div class="acts"><button class="btn" id="copyT">Copy template</button></div>
+  <p style="margin-top:18px">Your data</p>
+  <textarea id="paste" spellcheck="false" placeholder='{ "meta": {...}, "accounts": [...], "daily": [...], "uploads": [...] }'></textarea>
+  <div class="acts">
+    <button class="btn pri" id="loadBtn">Load</button>
+    <label class="btn" style="display:inline-flex;align-items:center">Choose .json file<input type="file" id="file" accept=".json,application/json" hidden></label>
+    <button class="btn" id="resetBtn">Back to built-in data</button>
+    <span class="msg" id="msg" role="status"></span>
+  </div>
+</details>
+
+<p class="foot">Updated every hour from Metricool. Engagement rate = (likes + comments + shares) ÷ views. Net followers = gained − lost. Changes compare with the period of the same length just before.</p>
+</div>
+
+<script>
+{
+const $=s=>document.querySelector(s);
+const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const PL={instagram:{name:'Instagram',c:'var(--ig)'},tiktok:{name:'TikTok',c:'var(--tt)'},youtube:{name:'YouTube',c:'var(--yt)'}};
+const PLAT=Object.keys(PL);
+const MON=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const dnum=s=>Math.round(Date.UTC(+s.slice(0,4),+s.slice(5,7)-1,+s.slice(8,10))/864e5);
+const dstr=n=>new Date(n*864e5).toISOString().slice(0,10);
+const dlab=s=>s?`${+s.slice(8,10)} ${MON[+s.slice(5,7)-1]}`:'—';
+const tlab=s=>s?`${dlab(s)}, ${s.slice(11,16)}`:'—';
+function fmt(n){if(n==null||!isFinite(n))return '—';const a=Math.abs(n),s=n<0?'−':'';if(a<1000)return s+Math.round(a).toLocaleString('en');let u=a<1e6?[1e3,'K']:a<1e9?[1e6,'M']:[1e9,'B'];if(u[1]==='K'&&a/1e3>=999.95)u=[1e6,'M'];return s+(a/u[0]).toFixed(1).replace(/\.0$/,'')+u[1]}
+const sgn=n=>(n>0?'+':'')+fmt(n);
+const pct=(c,p)=>p==null||Math.abs(p)<10?null:(c-p)/Math.abs(p)*100;
+const er=a=>a.views?(a.likes+a.comments+a.shares)/a.views*100:null;
+function dHtml(v,unit){if(v==null||!isFinite(v))return '<span class="d flat">not enough earlier data</span>';const cls=Math.abs(v)<.05?'flat':v>0?'up':'dn';return `<span class="d ${cls}">${v>0?'▲':v<0?'▼':''} ${Math.abs(v).toFixed(1)}${unit||'%'}</span>`}
+
+/* ---------- sample data generator (used only when daily is empty) ---------- */
+function rng(seed){let s=seed;return()=>(s=s*16807%2147483647)/2147483647}
+function mockDaily(asOf,days){
+  const r=rng(42),out=[],end=dnum(asOf);
+  const B={instagram:{v:6200,f:12400,er:.062,g:.0045,sp:.05},tiktok:{v:17500,f:28900,er:.081,g:.006,sp:.09},youtube:{v:3100,f:5200,er:.048,g:.004,sp:.03}};
+  for(const p of PLAT){const b=B[p];let f=b.f;
+    for(let i=days-1;i>=0;i--){const d=end-i,t=(days-1-i)/days;
+      const views=Math.round(b.v*(1+.55*t)*(1+.12*Math.sin(d*2*Math.PI/7))*(r()<b.sp?1.8+r()*1.5:1)*(.85+r()*.3));
+      const eng=views*b.er*(.85+r()*.3);
+      const gained=Math.round(views*b.g*(.7+r()*.6)),lost=Math.round(gained*(.12+r()*.2));f+=gained-lost;
+      out.push({date:dstr(d),platform:p,views,likes:Math.round(eng*.82),comments:Math.round(eng*.07),shares:Math.round(eng*.11),followers_gained:gained,followers_lost:lost,followers_total:f});}}
+  return out}
+function mockUploads(asOf,days,daily){
+  const r=rng(7),end=dnum(asOf),out=[],idx=new Map(daily.map(x=>[x.platform+'|'+x.date,x]));
+  const prob={instagram:.6,tiktok:.75,youtube:.3},wf={instagram:'n8n · IG Reels',tiktok:'n8n · TikTok post',youtube:'n8n · YouTube Shorts'};
+  const titles=['Ring top-view reveal','Pendant front view in natural light','Studio polish in 15 seconds','How we set a solitaire','Customer favourite: twisted band','Gold vs rose gold, side by side','Weekend new arrivals','Packing an order with us','Behind the bench: stone setting','Sizing guide in 30 seconds','Anniversary pick of the week','Close-up: hand engraving'];
+  const errs={instagram:['Media container not ready after 5 min — retry scheduled','Access token expired. Reconnect the Instagram account','Reels needs a 9:16 video; file is 16:9'],tiktok:['Rate limit reached: too many posts in 24 h','Video chunk upload timed out','Caption longer than the allowed length'],youtube:['YouTube Data API daily quota exceeded','Upload stuck in processing for over 30 min','Thumbnail rejected: file larger than 2 MB']};
+  const ers={instagram:.062,tiktok:.081,youtube:.048};
+  for(let d=end-days+1;d<=end+3;d++)for(const p of PLAT){if(r()>=prob[p])continue;
+    const hh=[11,13,18,20][Math.floor(r()*4)],mm=[0,15,30,45][Math.floor(r()*4)],ds=dstr(d),hs=String(hh).padStart(2,'0'),ms=String(mm).padStart(2,'0');
+    const u={id:`${p.slice(0,2).toUpperCase()}-${ds.replace(/-/g,'').slice(2)}-${hs}${ms}`,platform:p,title:titles[Math.floor(r()*titles.length)],workflow:wf[p],scheduled_at:`${ds}T${hs}:${ms}:00+08:00`,posted_at:null,status:'pending',error:null,post_url:null,metrics:null};
+    if(d<=end){if(r()<.07){u.status='failed';u.error=errs[p][Math.floor(r()*3)]}else{u.status='success';u.posted_at=`${ds}T${hs}:${String(mm+1+Math.floor(r()*4)).padStart(2,'0')}:00+08:00`;
+      const dv=(idx.get(p+'|'+ds)||{views:5000}).views,v=Math.round(dv*(.6+r()*1.6)*(p==='tiktok'&&r()<.1?4:1)),e=v*ers[p]*(.8+r()*.5);
+      u.metrics={views:v,likes:Math.round(e*.82),comments:Math.round(e*.07),shares:Math.round(e*.11)}}}
+    out.push(u)}
+  return out}
+
+/* ---------- state ---------- */
+let D=null;
+const S={range:30,plats:new Set(PLAT),metric:'views',status:'all',q:'',shown:12};
+try{const s=JSON.parse(localStorage.getItem('ptc-dash')||'null');if(s){S.range=s.range??30;S.plats=new Set((s.plats||[]).filter(p=>PL[p]).length?s.plats.filter(p=>PL[p]):PLAT);S.metric=s.metric||'views'}}catch(e){}
+const save=()=>{try{localStorage.setItem('ptc-dash',JSON.stringify({range:S.range,plats:[...S.plats],metric:S.metric}))}catch(e){}};
+
+const normStatus=s=>{s=String(s||'').toLowerCase();return /fail|error/.test(s)?'failed':/success|posted|published|done|ok/.test(s)?'success':'pending'};
+const num=v=>+v||0;
+function load(raw){
+  const src=JSON.parse(JSON.stringify(raw||{}));
+  const meta=src.meta||{};
+  let daily=(src.daily||[]).filter(x=>x&&x.date&&PL[String(x.platform).toLowerCase()]).map(x=>({date:String(x.date).slice(0,10),platform:String(x.platform).toLowerCase(),views:num(x.views),likes:num(x.likes),comments:num(x.comments),shares:num(x.shares),followers_gained:num(x.followers_gained),followers_lost:num(x.followers_lost),followers_total:x.followers_total==null||x.followers_total===''?null:num(x.followers_total)}));
+  let uploads=(src.uploads||[]).filter(x=>x&&PL[String(x.platform).toLowerCase()]).map(x=>({...x,platform:String(x.platform).toLowerCase(),status:normStatus(x.status),scheduled_at:String(x.scheduled_at||x.posted_at||''),metrics:x.metrics?{views:num(x.metrics.views),likes:num(x.metrics.likes),comments:num(x.metrics.comments),shares:num(x.metrics.shares)}:null}));
+  const sample=!daily.length;
+  const asOf=(meta.as_of||(daily.length?daily.map(x=>x.date).sort().pop():'2026-11-24')).slice(0,10);
+  if(sample){daily=mockDaily(asOf,180);if(!uploads.length)uploads=mockUploads(asOf,180,daily)}
+  const dates=daily.map(x=>x.date).sort();
+  D={meta,sample,accounts:src.accounts||[],daily,uploads,last:dnum(asOf),first:dnum(dates[0]),idx:new Map(daily.map(x=>[x.platform+'|'+x.date,x]))};
+  S.shown=12;render()}
+
+function win(){if(S.range==='all')return{from:D.first,to:D.last,pf:null,pt:null,n:D.last-D.first+1};const n=+S.range;return{from:D.last-n+1,to:D.last,pf:D.last-2*n+1,pt:D.last-n,n}}
+function agg(from,to,plats){const a={views:0,likes:0,comments:0,shares:0,net:0,rows:0};if(from==null)return null;
+  for(const x of D.daily){if(!plats.includes(x.platform))continue;const d=dnum(x.date);if(d<from||d>to)continue;a.views+=x.views;a.likes+=x.likes;a.comments+=x.comments;a.shares+=x.shares;a.net+=x.followers_gained-x.followers_lost;a.rows++}
+  return a.rows?a:null}
+const selP=()=>PLAT.filter(p=>S.plats.has(p));
+
+/* ---------- render ---------- */
+function render(){renderControls();renderHead();renderKpis();draw();renderHealth();renderPlats();renderLog()}
+
+function renderControls(){
+  document.querySelectorAll('#range button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.r===String(S.range))));
+  document.querySelectorAll('#metric button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.m===S.metric)));
+  $('#plats').innerHTML=PLAT.map(p=>`<button class="chip" data-p="${p}" aria-pressed="${S.plats.has(p)}"><i class="dot" style="background:${PL[p].c}"></i>${PL[p].name}</button>`).join('');
+}
+function renderHead(){
+  const w=win(),ps=selP(),c=agg(w.from,w.to,ps),p=agg(w.pf,w.pt,ps);
+  const names=ps.map(x=>PL[x].name);const list=names.length>1?names.slice(0,-1).join(', ')+' and '+names.at(-1):names[0]||'No platform';
+  let t;
+  if(!c)t='No data for this selection';
+  else if(S.range==='all')t=`${fmt(c.views)} views since ${dlab(dstr(D.first))}`;
+  else{const v=pct(c.views,p?.views);t=v==null?`${fmt(c.views)} views in the last ${w.n} days`:`Views ${v>=0?'up':'down'} ${Math.abs(v).toFixed(1)}% on the previous ${w.n} days`}
+  $('#title').textContent=t;
+  $('#subtitle').textContent=`${list} · ${D.meta.brand||'Your brand'} · data to ${dlab(dstr(D.last))} ${dstr(D.last).slice(0,4)}`;
+  $('#sampleNote').hidden=!D.sample;if(!D.sample&&D.meta.source)$('#subtitle').textContent+=` · from ${D.meta.source}${D.meta.pulled_at?', pulled '+tlab(D.meta.pulled_at):''}`;
+}
+function renderKpis(){
+  const w=win(),ps=selP(),c=agg(w.from,w.to,ps)||{views:0,likes:0,comments:0,net:0},p=agg(w.pf,w.pt,ps);
+  const per=Object.fromEntries(ps.map(x=>[x,agg(w.from,w.to,[x])||{views:0,likes:0,comments:0,net:0}]));
+  const vs=S.range==='all'?'all available days':`vs previous ${w.n} days`;
+  const K=[['views','Total views'],['likes','Total likes'],['comments','Total comments'],['net','Net follower growth']];
+  $('#kpis').innerHTML=K.map(([k,l])=>{
+    const tot=ps.reduce((s,x)=>s+Math.max(0,per[x][k]),0)||1;
+    return `<div class="kpi" id="kpi-${k}"><div class="l">${l}</div><div class="v">${k==='net'?sgn(c[k]):fmt(c[k])}</div>${dHtml(p?pct(c[k],p[k]):null)} <span class="vs">${vs}</span>
+    <div class="split" title="Share by platform">${ps.map(x=>`<span style="width:${Math.max(0,per[x][k])/tot*100}%;background:${PL[x].c}" title="${PL[x].name}: ${fmt(per[x][k])}"></span>`).join('')}</div></div>`}).join('');
+}
+
+/* trend chart */
+const fig=$('#trend'),svg=fig.querySelector('svg'),tip=$('#tip');let G=null;
+function niceTicks(min,max){if(max===min)max=min+1;const raw=(max-min)/4,mag=10**Math.floor(Math.log10(raw)),n=raw/mag,st=(n<=1?1:n<=2?2:n<=5?5:10)*mag;const lo=Math.floor(min/st)*st,hi=Math.ceil(max/st)*st,out=[];for(let v=lo;v<=hi+st/2;v+=st)out.push(+v.toFixed(6));return out}
+const valFmt=v=>v==null?'—':S.metric==='er'?v.toFixed(1)+'%':S.metric==='net'?sgn(v):fmt(v);
+function series(){const w=win(),days=[];for(let d=w.from;d<=w.to;d++)days.push(dstr(d));
+  return{days,ser:selP().map(p=>({p,vals:days.map(d=>{const r=D.idx.get(p+'|'+d);if(!r)return null;return S.metric==='views'?r.views:S.metric==='er'?er(r):r.followers_gained-r.followers_lost})}))}}
+function draw(){
+  if(!D)return;const W=fig.clientWidth,H=fig.clientHeight;if(!W||!H)return;
+  $('#chartTitle').textContent={views:'Daily views by platform',er:'Daily engagement rate by platform',net:'Daily net followers by platform'}[S.metric];
+  const {days,ser}=series();
+  if(!ser.length||!days.length){svg.innerHTML=`<text x="${W/2}" y="${H/2}" text-anchor="middle" class="ax">Pick at least one platform</text>`;G=null;return}
+  const narrow=W<520,m={l:52,r:narrow?12:92,t:12,b:30},iw=W-m.l-m.r,ih=H-m.t-m.b;
+  let mx=-Infinity,mn=Infinity;ser.forEach(s=>s.vals.forEach(v=>{if(v!=null){mx=Math.max(mx,v);mn=Math.min(mn,v)}}));
+  if(!isFinite(mx)){mx=1;mn=0}
+  const tk=niceTicks(Math.min(0,mn),mx),y0=tk[0],y1=tk.at(-1);
+  const X=i=>m.l+(days.length<2?iw/2:i*iw/(days.length-1)),Y=v=>m.t+ih-(v-y0)/(y1-y0||1)*ih;
+  let g='';
+  tk.forEach(t=>{g+=`<line x1="${m.l}" x2="${W-m.r}" y1="${Y(t)}" y2="${Y(t)}" class="grid"${t===0?' style="stroke:var(--mute)"':''}/><text x="${m.l-8}" y="${Y(t)+4}" text-anchor="end" class="ax">${S.metric==='er'?t.toFixed(t%1?1:0)+'%':fmt(t)}</text>`});
+  const nt=Math.min(narrow?3:6,days.length);for(let k=0;k<nt;k++){const i=nt<2?0:Math.round(k*(days.length-1)/(nt-1));g+=`<text x="${X(i)}" y="${H-8}" text-anchor="${k===0?'start':k===nt-1?'end':'middle'}" class="ax">${dlab(days[i])}</text>`}
+  const sw=days.length>100?1.5:2;
+  ser.forEach(s=>{let d='',pen=false;s.vals.forEach((v,i)=>{if(v==null){pen=false;return}d+=(pen?'L':'M')+X(i).toFixed(1)+','+Y(v).toFixed(1);pen=true});g+=`<path d="${d}" fill="none" style="stroke:${PL[s.p].c}" stroke-width="${sw}" stroke-linejoin="round" stroke-linecap="round"/>`;s.vals.forEach((v,i)=>{if(v!=null&&s.vals[i-1]==null&&s.vals[i+1]==null)g+=`<circle cx="${X(i)}" cy="${Y(v)}" r="3" style="fill:${PL[s.p].c}"/>`})});
+  if(!narrow){const L=ser.map(s=>{let i=s.vals.length-1;while(i>0&&s.vals[i]==null)i--;return{p:s.p,v:s.vals[i],y:Y(s.vals[i]??0)}}).sort((a,b)=>a.y-b.y);
+    for(let k=1;k<L.length;k++)if(L[k].y-L[k-1].y<32)L[k].y=L[k-1].y+32;
+    const over=L.length?L.at(-1).y-(m.t+ih):0;if(over>0)L.forEach(l=>l.y-=over);
+    L.forEach(l=>{g+=`<text x="${W-m.r+10}" y="${l.y}" class="lab" style="fill:${PL[l.p].c}">${PL[l.p].name}</text><text x="${W-m.r+10}" y="${l.y+15}" class="ax">${valFmt(l.v)}</text>`})}
+  g+=`<line id="hair" y1="${m.t}" y2="${m.t+ih}" class="hair" style="display:none"/><g id="dots"></g>`;
+  svg.innerHTML=g;G={m,iw,X,Y,days,ser,W};
+}
+const ro=new ResizeObserver(draw);ro.observe(fig);
+function hover(e){if(!G)return;const r=fig.getBoundingClientRect(),x=e.clientX-r.left,n=G.days.length;
+  const i=Math.max(0,Math.min(n-1,Math.round((x-G.m.l)/G.iw*(n-1))));const hx=G.X(i);
+  const h=svg.querySelector('#hair');h.setAttribute('x1',hx);h.setAttribute('x2',hx);h.style.display='';
+  svg.querySelector('#dots').innerHTML=G.ser.map(s=>s.vals[i]==null?'':`<circle cx="${hx}" cy="${G.Y(s.vals[i])}" r="4" style="fill:${PL[s.p].c};stroke:var(--bg)" stroke-width="2"/>`).join('');
+  tip.innerHTML=`<b>${dlab(G.days[i])} ${G.days[i].slice(0,4)}</b>`+G.ser.map(s=>`<div><span><i class="dot" style="background:${PL[s.p].c}"></i> ${PL[s.p].name}</span><strong>${valFmt(s.vals[i])}</strong></div>`).join('');
+  tip.style.display='block';const tw=tip.offsetWidth;tip.style.left=(hx+14+tw>G.W?hx-14-tw:hx+14)+'px';tip.style.top='12px'}
+fig.addEventListener('pointermove',hover);fig.addEventListener('pointerdown',hover);
+fig.addEventListener('pointerleave',()=>{tip.style.display='none';const h=svg.querySelector('#hair');if(h)h.style.display='none';const d=svg.querySelector('#dots');if(d)d.innerHTML=''});
+
+/* uploads in window */
+const upIn=()=>{const w=win(),ps=selP();return D.uploads.filter(u=>ps.includes(u.platform)&&(!u.scheduled_at||dnum(u.scheduled_at.slice(0,10))>=w.from))};
+function renderHealth(){
+  const U=upIn(),c={success:0,failed:0,pending:0};U.forEach(u=>c[u.status]++);
+  const done=c.success+c.failed,rate=done?c.success/done*100:null,tot=U.length||1;
+  const next=U.filter(u=>u.status==='pending').sort((a,b)=>a.scheduled_at<b.scheduled_at?-1:1)[0];
+  const lastF=U.filter(u=>u.status==='failed').sort((a,b)=>a.scheduled_at>b.scheduled_at?-1:1)[0];
+  const rows=selP().map(p=>{const s=U.filter(u=>u.platform===p&&u.status==='success').length,f=U.filter(u=>u.platform===p&&u.status==='failed').length,r=s+f?s/(s+f)*100:0;
+    return `<div class="row"><span>${PL[p].name}</span><span class="track"><span style="width:${r}%;background:${PL[p].c}"></span></span><span class="n">${s}/${s+f}</span></div>`}).join('');
+  $('#health').innerHTML=`<div><h2>Automation health</h2><p class="sub" style="font-size:14px">Upload success rate, ${S.range==='all'?'all time':'last '+win().n+' days'}</p></div>
+  <div class="big">${rate==null?'—':rate.toFixed(1)+'%'}</div>
+  <div><div class="meter"><span style="width:${c.success/tot*100}%;background:var(--ok)"></span><span style="width:${c.failed/tot*100}%;background:var(--bad)"></span><span style="width:${c.pending/tot*100}%;background:var(--wait)"></span></div>
+  <div class="legend" style="margin-top:8px"><span><i class="dot" style="background:var(--ok)"></i>${c.success} posted</span><span><i class="dot" style="background:var(--bad)"></i>${c.failed} failed</span><span><i class="dot" style="background:var(--wait)"></i>${c.pending} pending</span></div></div>
+  <div class="rows">${rows||'<span class="empty">No platform selected</span>'}</div>
+  <div class="box"><div class="k">Next scheduled</div>${next?`<div class="pt">${esc(next.title)}</div><div class="meta">${PL[next.platform].name} · ${esc(tlab(next.scheduled_at))}</div>`:'<div class="empty">Nothing queued</div>'}</div>
+  <div class="box"><div class="k">Latest failure</div>${lastF?`<div class="pt">${esc(lastF.title)}</div><div class="meta">${PL[lastF.platform].name} · ${esc(tlab(lastF.scheduled_at))}</div><div class="err" style="font-size:13px">${esc(lastF.error||'No error message')}</div>`:'<div class="empty">No failures in this period</div>'}</div>`;
+}
+function renderPlats(){
+  const w=win(),U=upIn();
+  const html=selP().map(p=>{
+    const c=agg(w.from,w.to,[p]),pv=agg(w.pf,w.pt,[p]),acct=(D.accounts.find(a=>String(a.platform).toLowerCase()===p)||{}).handle||'';
+    if(!c)return `<article class="pc" style="--c:${PL[p].c}" id="pc-${p}"><header><h2>${PL[p].name}</h2><span class="h">${esc(acct)}</span></header><p class="empty">No data in this period.</p></article>`;
+    const rows=D.daily.filter(x=>x.platform===p&&dnum(x.date)>=w.from&&dnum(x.date)<=w.to).sort((a,b)=>a.date<b.date?-1:1);
+    const tot=rows.filter(r=>r.followers_total!=null).at(-1)?.followers_total;
+    const vals=rows.map(r=>r.followers_total).filter(v=>v!=null);let spark='';
+    if(vals.length>1){const mn=Math.min(...vals),mx=Math.max(...vals)||1,pts=vals.map((v,i)=>`${(i/(vals.length-1)*100).toFixed(2)},${(28-(v-mn)/((mx-mn)||1)*26).toFixed(2)}`).join(' ');
+      spark=`<svg class="spark" viewBox="0 0 100 30" preserveAspectRatio="none" aria-label="Follower growth"><polygon points="0,30 ${pts} 100,30" style="fill:${PL[p].c};opacity:.12"/><polyline points="${pts}" fill="none" style="stroke:${PL[p].c}" stroke-width="2" vector-effect="non-scaling-stroke"/></svg>`}
+    const e=er(c),pe=pv?er(pv):null;
+    const top=U.filter(u=>u.platform===p&&u.status==='success'&&u.metrics).sort((a,b)=>b.metrics.views-a.metrics.views)[0];
+    const st=[['Views',fmt(c.views),pv?pct(c.views,pv.views):null],['Likes',fmt(c.likes),pv?pct(c.likes,pv.likes):null],['Comments',fmt(c.comments),pv?pct(c.comments,pv.comments):null],['Eng. rate',e==null?'—':e.toFixed(1)+'%',pe!=null&&e!=null?e-pe:null,' pts']];
+    const topLink=top&&/^https?:\/\//.test(top.post_url||'')?` · <a href="${esc(top.post_url)}" target="_blank" rel="noopener">Open</a>`:'';
+    return `<article class="pc" style="--c:${PL[p].c}" id="pc-${p}">
+      <header><h2>${PL[p].name}</h2><span class="h">${esc(acct)}</span></header>
+      <div><div class="k vs">${p==='youtube'?'Subscribers':'Followers'}</div><div class="fol"><span class="v">${fmt(tot)}</span><span class="d ${c.net>=0?'up':'dn'}">${sgn(c.net)} this period</span></div></div>
+      ${spark}
+      <div class="stats">${st.map(s=>`<div><div class="k">${s[0]}</div><div class="v">${s[1]}</div>${S.range==='all'?'':dHtml(s[2],s[3])}</div>`).join('')}</div>
+      <div class="topp"><div class="k">Top post this period</div>${top?`<div class="t">${esc(top.title)}</div><div class="meta">${esc(dlab(top.scheduled_at))} · ${fmt(top.metrics.views)} views · ${fmt(top.metrics.likes)} likes · ${(er(top.metrics)??0).toFixed(1)}% eng.${topLink}</div>`:'<div class="empty">No posted uploads with metrics yet</div>'}</div>
+    </article>`}).join('');
+  $('#platCards').innerHTML=html||'<p class="empty">Pick at least one platform above.</p>';
+  $('#platCards').style.gridTemplateColumns=window.innerWidth>900?`repeat(${Math.max(1,selP().length)},minmax(0,1fr))`:'';
+}
+function renderLog(){
+  const base=upIn(),cnt={all:base.length,success:0,failed:0,pending:0};base.forEach(u=>cnt[u.status]++);
+  $('#status').innerHTML=[['all','All'],['success','Success'],['failed','Failed'],['pending','Pending']].map(([k,l])=>`<button data-s="${k}" aria-pressed="${S.status===k}">${l} (${cnt[k]})</button>`).join('');
+  const q=S.q.trim().toLowerCase();
+  const U=base.filter(u=>(S.status==='all'||u.status===S.status)&&(!q||[u.title,u.id,u.error,u.workflow].join(' ').toLowerCase().includes(q))).sort((a,b)=>a.scheduled_at>b.scheduled_at?-1:1);
+  const rows=U.slice(0,S.shown).map(u=>{
+    const res=u.status==='failed'?`<span class="err">${esc(u.error||'Failed with no message')}</span>`:u.status==='success'?(u.metrics?`${fmt(u.metrics.views)} views · ${(er(u.metrics)??0).toFixed(1)}% eng.`:'Posted'):'Queued';
+    const link=/^https?:\/\//.test(u.post_url||'')?` · <a href="${esc(u.post_url)}" target="_blank" rel="noopener">Open</a>`:'';
+    return `<tr><td><div class="pt">${esc(u.title||'Untitled')}</div><div class="meta">${esc(u.id||'')}${u.workflow?' · '+esc(u.workflow):''}${link}</div></td>
+    <td><span class="badge" style="color:${PL[u.platform].c}">${PL[u.platform].name}</span></td>
+    <td class="t">${esc(tlab(u.scheduled_at))}</td><td class="t">${esc(tlab(u.posted_at))}</td>
+    <td><span class="badge s-${u.status}">${u.status[0].toUpperCase()+u.status.slice(1)}</span></td><td>${res}</td></tr>`}).join('');
+  $('#logTable tbody').innerHTML=rows||'<tr><td colspan="6" class="empty">No uploads match these filters.</td></tr>';
+  const b=$('#more');b.hidden=U.length<=S.shown;b.textContent=`Show more (${U.length-S.shown} left)`;
+}
+
+/* ---------- events ---------- */
+$('#range').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;S.range=b.dataset.r==='all'?'all':+b.dataset.r;S.shown=12;save();render()});
+$('#metric').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;S.metric=b.dataset.m;save();renderControls();draw()});
+$('#plats').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const p=b.dataset.p;if(S.plats.has(p)&&S.plats.size>1)S.plats.delete(p);else S.plats.add(p);save();render()});
+$('#status').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;S.status=b.dataset.s;S.shown=12;renderLog()});
+$('#q').addEventListener('input',e=>{S.q=e.target.value;S.shown=12;renderLog()});
+$('#more').addEventListener('click',()=>{S.shown+=20;renderLog()});
+window.addEventListener('resize',()=>{if(D)renderPlats()});
+
+const TEMPLATE={meta:{brand:"PTC",timezone:"Asia/Singapore",as_of:"2026-11-24",data_url:""},accounts:[{platform:"instagram",handle:"@ptc.official"},{platform:"tiktok",handle:"@ptc.official"},{platform:"youtube",handle:"PTC Official"}],
+  daily:[{date:"2026-11-24",platform:"instagram",views:8120,likes:512,comments:41,shares:63,followers_gained:38,followers_lost:6,followers_total:14210}],
+  uploads:[{id:"IG-261124-1830",platform:"instagram",title:"Ring top-view reveal",workflow:"n8n · IG Reels",scheduled_at:"2026-11-24T18:30:00+08:00",posted_at:"2026-11-24T18:32:00+08:00",status:"success",error:null,post_url:"https://www.instagram.com/p/EXAMPLE/",metrics:{views:12400,likes:860,comments:52,shares:97}},
+    {id:"YT-261124-2000",platform:"youtube",title:"How we set a solitaire",workflow:"n8n · YouTube Shorts",scheduled_at:"2026-11-24T20:00:00+08:00",posted_at:null,status:"failed",error:"YouTube Data API daily quota exceeded",post_url:null,metrics:null}]};
+$('#schema').textContent=JSON.stringify(TEMPLATE,null,2);
+const msg=(t,bad)=>{const m=$('#msg');m.textContent=t;m.className='msg '+(bad?'err':'s-success')};
+$('#copyT').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(JSON.stringify(TEMPLATE,null,2));msg('Template copied')}catch(e){msg('Copy was blocked here. Select the text above and copy it.',true)}});
+function tryLoad(text){try{const j=JSON.parse(text);if(!Array.isArray(j.daily)||!j.daily.length)throw new Error('Needs a "daily" array with at least one row');load(j);msg(`Loaded ${D.daily.length} daily rows and ${D.uploads.length} uploads`)}catch(e){msg('Could not load: '+e.message,true)}}
+$('#loadBtn').addEventListener('click',()=>tryLoad($('#paste').value));
+$('#file').addEventListener('change',e=>{const f=e.target.files[0];if(!f)return;f.text().then(t=>{$('#paste').value=t;tryLoad(t)});e.target.value=''});
+$('#resetBtn').addEventListener('click',()=>{load(window.DASHBOARD_DATA);msg('Showing built-in data')});
+
+/* ---------- start ---------- */
+const base=window.DASHBOARD_DATA||{};
+if(base.meta&&base.meta.data_url){fetch(base.meta.data_url+'?v='+Date.now(),{cache:'no-store'}).then(r=>{if(!r.ok)throw 0;return r.json()}).then(load).catch(()=>{$('#title').textContent='The latest numbers couldn’t load. Please refresh in a minute.'})}
+else load(base);
+}
+</script>
+</body>
+</html>
