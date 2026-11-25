@@ -433,9 +433,9 @@ function renderWS(){
     const cell=(label,val,na)=>`<div><div class="k">${label}</div>${val==null?`<div class="na">${na||'Not reported yet'}</div>`:`<div class="v">${val}</div>`}</div>`;
     return `<article class="wc" style="--c:${PL[p].c}"><h3>${PL[p].name}</h3><div class="wgrid">
       ${cell('Total watch time',watched.length?dur(wt):null)}
-      ${cell('Avg watch per view',watched.length&&wv?dur(wt/wv):null)}
+      ${cell('Avg watch per view',(()=>{const a=ps.filter(x=>x.avg_watch_seconds!=null&&x.views),v=a.reduce((s,x)=>s+x.views,0);return v?dur(a.reduce((s,x)=>s+x.avg_watch_seconds*x.views,0)/v):null})())}
       ${p==='instagram'?cell('Saves',saves.length?fmt(sv):null):cell('Saves',null,`${PL[p].name} doesn't share saves`)}
-      ${p==='tiktok'?cell('Watched to the end',comp.length?(comp.reduce((s,x)=>s+x.completion_rate,0)/comp.length).toFixed(1)+'%':null):cell('Videos counted',fmt(ps.length))}
+      ${p==='tiktok'?cell('Watched to the end',comp.length?(comp.reduce((s,x)=>s+x.completion_rate,0)/comp.length).toFixed(1)+'%':null):cell('Videos with figures',fmt(ps.length))}
     </div>${bestW?`<div class="meta">Held attention longest: <b style="color:var(--ink)">${esc(bestW.title)}</b> (${dur(bestW.avg_watch_seconds)} per view)</div>`:''}</article>`}).join('')||'<p class="empty">Pick at least one platform above.</p>';
 }
 
@@ -444,7 +444,7 @@ function renderGal(){
   const ps=selP(),items=D.posts.filter(x=>ps.includes(x.platform)&&inWin(x.published));
   if(!items.length){$('#gal').innerHTML='<p class="empty">No posts in this period yet.</p>';$('#galMore').hidden=true;return}
   $('#gal').innerHTML=items.slice(0,S.gal).map((x,i)=>{
-    const href=safeUrl(x.url),thumb=safeUrl(x.thumb),media=safeUrl(x.media);
+    const href=safeUrl(x.url),media=safeUrl(x.media),thumb=x.platform==='youtube'&&media?null:safeUrl(x.thumb);
     const tag=href?'a':'div',attrs=href?` href="${esc(href)}" target="_blank" rel="noopener"`:'';
     const m=[x.views!=null?`<span><b>${fmt(x.views)}</b> views</span>`:'',x.likes!=null?`<span><b>${fmt(x.likes)}</b> likes</span>`:'',x.saves!=null?`<span><b>${fmt(x.saves)}</b> saves</span>`:'',x.avg_watch_seconds!=null?`<span><b>${dur(x.avg_watch_seconds)}</b> avg watch</span>`:''].join('');
     return `<${tag} class="card"${attrs}><div class="media" data-i="${i}">${thumb?`<img src="${esc(thumb)}" alt="" loading="lazy" referrerpolicy="no-referrer">`:''}
