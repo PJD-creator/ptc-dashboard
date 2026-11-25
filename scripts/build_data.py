@@ -9,6 +9,7 @@ RAW_DIR holds the Metricool tool answers saved as JSON:
   tt_videos.json   getAnalyticsDataByMetrics with TT_VIDEOS
   yt_videos.json   getAnalyticsDataByMetrics with YT_VIDEOS
   planner.json     getScheduledPosts
+  best_<platform>.json  getBestTimeToPostByNetwork for instagram, tiktok, youtube
 """
 import json, os, re, sys
 from datetime import datetime, timedelta, timezone
@@ -16,9 +17,10 @@ from datetime import datetime, timedelta, timezone
 SGT = timezone(timedelta(hours=8))
 DAILY_METRICS = ["IGEV01","IGEV05","IGEV13","IGEV14","IGEV27","IGEV28","IGEV39","IGEV40","IGEV43","IGEV44",
                  "TKEV07","TKEV02","TKEV03","TKEV04","TKEV05","TKEV16","TKEV17",
-                 "YTEV01","YTEV02","YTEV10","YTEV12","YTEV19","YTEV05","YTEV06"]
+                 "YTEV01","YTEV02","YTEV10","YTEV12","YTEV19","YTEV05","YTEV06",
+                 "IGEV15","IGEV29"]
 MAP = {
-  "instagram": {"followers_total":["IGEV01"],"views":["IGEV05"],"likes":["IGEV13","IGEV27"],"comments":["IGEV14","IGEV28"],"shares":["IGEV40","IGEV39"],"followers_gained":["IGEV43"],"followers_lost":["IGEV44"]},
+  "instagram": {"followers_total":["IGEV01"],"views":["IGEV05"],"likes":["IGEV13","IGEV27"],"comments":["IGEV14","IGEV28"],"shares":["IGEV40","IGEV39"],"followers_gained":["IGEV43"],"followers_lost":["IGEV44"],"saves":["IGEV15","IGEV29"]},
   "tiktok":    {"followers_total":["TKEV07"],"views":["TKEV02"],"likes":["TKEV03"],"comments":["TKEV04"],"shares":["TKEV05"],"followers_gained":["TKEV16"],"followers_lost":["TKEV17"]},
   "youtube":   {"followers_total":["YTEV01"],"views":["YTEV02"],"likes":["YTEV10"],"comments":["YTEV12"],"shares":["YTEV19"],"followers_gained":["YTEV05"],"followers_lost":["YTEV06"]},
 }
@@ -49,7 +51,8 @@ def build_daily(ans, today):
             for k, ids in m.items():
                 v = None
                 for i in ids:
-                    x = num(r[DAILY_METRICS.index(i)]) if i in DAILY_METRICS else None
+                    j = DAILY_METRICS.index(i) if i in DAILY_METRICS else -1
+                    x = num(r[j]) if 0 <= j < len(r) - 1 else None
                     if x is not None: v = (v or 0) + x
                 row[k] = v
                 if v is not None: anyv = True
@@ -63,8 +66,8 @@ def build_daily(ans, today):
             diff = t - prev; r["followers_gained"] = max(diff, 0); r["followers_lost"] = max(-diff, 0)
         if t is not None: last[r["platform"]] = t
     for r in rows:
-        for k in ("views","likes","comments","shares","followers_gained","followers_lost"):
-            r[k] = int(r[k] or 0)
+        for k in ("views","likes","comments","shares","followers_gained","followers_lost","saves"):
+            r[k] = int(r.get(k) or 0)
         if r["followers_total"] is not None: r["followers_total"] = int(r["followers_total"])
     rows.sort(key=lambda r: (r["date"], r["platform"]))
     return rows
@@ -75,14 +78,47 @@ def key_of(url):
     m = re.search(r"(?:shorts/|watch\?v=|youtu\.be/|/video/|/reel/|/p/)([A-Za-z0-9_-]+)", url)
     return m.group(1) if m else u
 
+# Column layout of each post list, in the order the metrics are requested.
+POST_LISTS = {
+  "ig_reels.json":  ("instagram", ["published","text","url","views","likes","comments","shares","thumb","saves","avg_watch","watch"]),
+  "ig_posts.json":  ("instagram", ["published","text","url","views","likes","comments","shares","thumb","saves"]),
+  "tt_videos.json": ("tiktok",    ["published","text","url","views","likes","comments","shares","thumb","watch","completion"]),
+  "yt_videos.json": ("youtube",   ["published","title","url","views","likes","comments","shares","thumb","watch_minutes","avg_watch"]),
+}
+
+def iso_utc(v):
+    v = str(v or "")
+    if re.fullmatch(r"\d{14}", v): return f"{v[:4]}-{v[4:6]}-{v[6:8]}T{v[8:10]}:{v[10:12]}:{v[12:14]}Z"
+    if re.fullmatch(r"\d{8}", v): return f"{v[:4]}-{v[4:6]}-{v[6:8]}T00:00:00Z"
+    return v or None
+
 def build_posts(raw):
     posts = {}
-    for name in ("ig_reels.json","ig_posts.json","tt_videos.json","yt_videos.json"):
+    for name, (platform, cols) in POST_LISTS.items():
         for r in load(raw, name).get("rows", []) or []:
-            k = key_of(r[2] if len(r) > 2 else None)
+            c = dict(zip(cols, r))
+            k = key_of(c.get("url"))
             if not k: continue
-            posts[k] = {"views": int(num(r[3]) or 0), "likes": int(num(r[4]) or 0), "comments": int(num(r[5]) or 0), "shares": int(num(r[6]) or 0)}
+            views = int(num(c.get("views")) or 0)
+            watch = num(c.get("watch"))
+            if c.get("watch_minutes") is not None: watch = (num(c.get("watch_minutes")) or 0) * 60
+            avg = num(c.get("avg_watch"))
+            if avg is None and watch is not None and views: avg = watch / views
+            title = c.get("title") or re.split(r"\n| \u2014 | DM ", str(c.get("text") or ""))[0].strip()
+            url = str(c.get("url") or "").split("?")[0] if platform == "tiktok" else c.get("url")
+            posts[k] = {"key": k, "platform": platform, "published": iso_utc(c.get("published")), "title": title or "Untitled",
+                        "url": url, "thumb": c.get("thumb") or None,
+                        "views": views, "likes": int(num(c.get("likes")) or 0), "comments": int(num(c.get("comments")) or 0),
+                        "shares": int(num(c.get("shares")) or 0),
+                        "saves": None if c.get("saves") is None and platform != "instagram" else int(num(c.get("saves")) or 0),
+                        "watch_seconds": None if watch is None else round(watch, 1),
+                        "avg_watch_seconds": None if avg is None else round(avg, 2),
+                        "completion_rate": num(c.get("completion"))}
     return posts
+
+def yt_thumb(url):
+    m = re.search(r"(?:shorts/|watch\?v=|youtu\.be/)([A-Za-z0-9_-]{6,})", url or "")
+    return f"https://i.ytimg.com/vi/{m.group(1)}/hqdefault.jpg" if m else None
 
 def build_uploads(raw, posts):
     out = []
@@ -103,8 +139,36 @@ def build_uploads(raw, posts):
                         "workflow": "Metricool · " + ("auto-publish" if p.get("autoPublish") else "manual publish"),
                         "scheduled_at": when, "posted_at": when if status == "success" else None,
                         "status": status, "error": (pr.get("errorMessage") or pr.get("error") or pr.get("detailedStatus") or "Failed") if status == "failed" else None,
-                        "post_url": url, "metrics": posts.get(key_of(url)) if url else None})
+                        "post_url": url, "media": (p.get("media") or [None])[0],
+                        "metrics": ({k: posts[key_of(url)][k] for k in ("views","likes","comments","shares")} if url and key_of(url) in posts else None)})
     out.sort(key=lambda u: u["scheduled_at"], reverse=True)
+    return out
+
+def build_gallery(posts, uploads):
+    items = {k: dict(v) for k, v in posts.items()}
+    for u in uploads:
+        if u["status"] != "success" or not u.get("post_url"): continue
+        k = key_of(u["post_url"])
+        it = items.get(k)
+        if it is None:
+            it = items[k] = {"key": k, "platform": u["platform"], "published": u["scheduled_at"], "title": u["title"], "url": u["post_url"],
+                             "thumb": None, "views": None, "likes": None, "comments": None, "shares": None, "saves": None,
+                             "watch_seconds": None, "avg_watch_seconds": None, "completion_rate": None}
+        if u["platform"] != "instagram": it["title"] = u["title"]
+        it["media"] = it.get("media") or u.get("media")
+        if u["platform"] == "youtube": it["thumb"] = it.get("thumb") or yt_thumb(u["post_url"])
+    out = sorted(items.values(), key=lambda p: p.get("published") or "", reverse=True)
+    for p in out: p.setdefault("media", None)
+    return out
+
+def build_best_times(raw):
+    out = {}
+    for p in MAP:
+        cells = []
+        for d in (load(raw, f"best_{p}.json").get("data") or []):
+            for h in d.get("bestTimesByHour") or []:
+                cells.append([int(d["dayOfWeek"]), int(h["hourOfDay"]), num(h.get("value")) or 0])
+        if cells: out[p] = cells
     return out
 
 def main():
@@ -118,10 +182,13 @@ def main():
                "as_of": today, "source": "Metricool", "pulled_at": now.strftime("%Y-%m-%dT%H:%M:00+08:00"), "data_url": ""},
       "accounts": [{"platform": "instagram", "handle": "@ptc.sg"}, {"platform": "tiktok", "handle": "@ptc.sg"}, {"platform": "youtube", "handle": "PTC channel"}],
       "daily": daily,
-      "uploads": build_uploads(raw, build_posts(raw)),
     }
+    posts = build_posts(raw)
+    data["uploads"] = build_uploads(raw, posts)
+    data["posts"] = build_gallery(posts, data["uploads"])
+    data["best_times"] = build_best_times(raw)
     with open(out_file, "w") as f: json.dump(data, f, ensure_ascii=False, indent=1)
-    print(f"Wrote {out_file}: {len(daily)} daily rows, {len(data['uploads'])} uploads")
+    print(f"Wrote {out_file}: {len(daily)} daily rows, {len(data['uploads'])} uploads, {len(data['posts'])} posts, best times for {', '.join(data['best_times']) or 'none'}")
 
 if __name__ == "__main__":
     main()
