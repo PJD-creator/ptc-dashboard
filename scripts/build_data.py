@@ -10,6 +10,11 @@ RAW_DIR holds the Metricool tool answers saved as JSON:
   yt_videos.json   getAnalyticsDataByMetrics with YT_VIDEOS
   planner.json     getScheduledPosts
   best_<platform>.json  getBestTimeToPostByNetwork for instagram, tiktok, youtube
+YouTube comes from Windsor.ai when these files are present (each a get_data answer):
+  yt_w_daily.json   fields date, views, likes, comments, shares, subscribers_gained_channel, subscribers_lost_channel
+  yt_w_videos.json  fields video, video_title, published_at, video_view_count, video_like_count, video_comment_count, videourl, videoimage
+  yt_w_watch.json   fields video, shares, estimated_minutes_watched, average_view_duration
+  yt_w_channel.json fields subscriber_count
 """
 import json, os, re, sys
 from datetime import datetime, timedelta, timezone
@@ -171,6 +176,54 @@ def build_best_times(raw):
         if cells: out[p] = cells
     return out
 
+def wrows(raw, name):
+    a = load(raw, name)
+    if isinstance(a, dict): a = a.get("data") or []
+    return a if isinstance(a, list) else []
+
+def apply_windsor_youtube(raw, daily, posts, today):
+    wd, wv = wrows(raw, "yt_w_daily.json"), wrows(raw, "yt_w_videos.json")
+    if not wd and not wv: return False
+    if wd:
+        old = {r["date"]: r for r in daily if r["platform"] == "youtube"}
+        daily[:] = [r for r in daily if r["platform"] != "youtube"]
+        for w in wd:
+            d = str(w.get("date"))[:10]
+            if d > today: continue
+            r = old.pop(d, {"date": d, "platform": "youtube", "followers_total": None})
+            r.update({"views": int(num(w.get("views")) or 0), "likes": int(num(w.get("likes")) or 0), "comments": int(num(w.get("comments")) or 0),
+                      "shares": int(num(w.get("shares")) or 0), "followers_gained": int(num(w.get("subscribers_gained_channel")) or 0),
+                      "followers_lost": int(num(w.get("subscribers_lost_channel")) or 0), "saves": 0})
+            daily.append(r)
+        for r in old.values():  # keep Metricool subscriber totals for days Windsor has no row
+            r.update({"views": 0, "likes": 0, "comments": 0, "shares": 0, "followers_gained": 0, "followers_lost": 0}); daily.append(r)
+    ch = wrows(raw, "yt_w_channel.json")
+    subs = num(ch[0].get("subscriber_count")) if ch else None
+    if subs is not None:
+        t = next((r for r in daily if r["platform"] == "youtube" and r["date"] == today), None)
+        if t is None:
+            t = {"date": today, "platform": "youtube", "views": 0, "likes": 0, "comments": 0, "shares": 0, "followers_gained": 0, "followers_lost": 0, "saves": 0}
+            daily.append(t)
+        t["followers_total"] = int(subs)
+    if wv:
+        watch = {w.get("video"): w for w in wrows(raw, "yt_w_watch.json")}
+        for k in [k for k, p in posts.items() if p["platform"] == "youtube"]: del posts[k]
+        for v in wv:
+            vid = v.get("video")
+            if not vid: continue
+            w = watch.get(vid, {})
+            mins = num(w.get("estimated_minutes_watched"))
+            pub = str(v.get("published_at") or "")
+            posts[vid] = {"key": vid, "platform": "youtube", "published": pub if pub.endswith("Z") or not pub else pub + ("Z" if "T" in pub else "T00:00:00Z"),
+                          "title": v.get("video_title") or "Untitled", "url": v.get("videourl") or f"https://www.youtube.com/shorts/{vid}",
+                          "thumb": v.get("videoimage") or f"https://i.ytimg.com/vi/{vid}/hqdefault.jpg",
+                          "views": int(num(v.get("video_view_count")) or 0), "likes": int(num(v.get("video_like_count")) or 0),
+                          "comments": int(num(v.get("video_comment_count")) or 0), "shares": int(num(w.get("shares")) or 0) if w else None,
+                          "saves": None, "watch_seconds": None if mins is None else round(mins * 60, 1),
+                          "avg_watch_seconds": num(w.get("average_view_duration")), "completion_rate": None}
+    daily.sort(key=lambda r: (r["date"], r["platform"]))
+    return True
+
 def main():
     raw, out_file = sys.argv[1], sys.argv[2]
     now = datetime.now(SGT)
@@ -184,6 +237,7 @@ def main():
       "daily": daily,
     }
     posts = build_posts(raw)
+    data["meta"]["youtube_source"] = "Windsor.ai" if apply_windsor_youtube(raw, daily, posts, today) else "Metricool"
     data["uploads"] = build_uploads(raw, posts)
     data["posts"] = build_gallery(posts, data["uploads"])
     data["best_times"] = build_best_times(raw)

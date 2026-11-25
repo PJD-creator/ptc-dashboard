@@ -251,7 +251,7 @@ footer p{margin:0 0 6px;max-width:80ch}
 <footer class="wrap">
   <img src="assets/emblem.png" alt="">
   <div>
-    <p><b style="color:var(--ink)">Precious Trade Consortium</b> · Social dashboard, updated every hour from Metricool.</p>
+    <p><b style="color:var(--ink)">Precious Trade Consortium</b> · Social dashboard, updated every hour. Instagram and TikTok from Metricool, YouTube from Windsor.ai.</p>
     <p>Engagement rate = (likes + comments + shares) ÷ views. Net followers = gained − lost. Changes compare with the period of the same length just before and show once that period has at least 10 to compare. Watch time and saves come from each post's own figures; TikTok and YouTube don't report saves through Metricool.</p>
   </div>
 </footer>
@@ -400,6 +400,7 @@ function renderPlats(){
       <header><h3>${PL[p].name}</h3><span class="meta">${esc(acct)}</span></header>
       <div><div class="k">${p==='youtube'?'Subscribers':'Followers'}</div><div class="fol"><span class="v">${fmt(tot&&tot.followers_total)}</span><span class="d ${cc.net>0?'up':cc.net<0?'dn':''}">${sgn(cc.net)} this period</span></div></div>
       ${spark}
+      ${p==='youtube'?'<div class="meta">Daily YouTube figures run 2–3 days behind; post views below are live.</div>':''}
       <div class="stats">${st.map(s=>`<div><div class="k">${s[0]}</div><div class="v">${s[1]}</div>${s[2]==null?'':dHtml(s[2],s[3])}</div>`).join('')}</div>
       <div class="topp"><div class="k">Top post this period</div>${top?`<div class="t">${esc(top.title)}</div><div class="meta">${dlab(sgtDate(top.published))} · ${fmt(top.views)} views · ${fmt(top.likes)} likes${er(top)!=null?` · ${er(top).toFixed(1)}% eng.`:''}${link}</div>`:'<div class="empty">No post with figures in this period yet</div>'}</div>
     </article>`}).join('')||'<p class="empty">Pick at least one platform above.</p>';
