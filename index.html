@@ -60,6 +60,7 @@ window.DASHBOARD_DATA = {
 :root[data-theme=light]{color-scheme:light}
 :root[data-theme=dark]{color-scheme:dark}
 *{box-sizing:border-box;min-width:0}
+[hidden]{display:none!important}
 html,body{margin:0}
 body{background:var(--bg);color:var(--ink);font:16px/1.5 "Libre Franklin",system-ui,sans-serif;overflow-x:clip}
 .wrap{max-width:1240px;margin:0 auto;padding:clamp(20px,3vw,40px) max(4vw,16px) 48px}
@@ -324,7 +325,7 @@ function renderKpis(){
   const K=[['views','Total views'],['likes','Total likes'],['comments','Total comments'],['net','Net follower growth']];
   $('#kpis').innerHTML=K.map(([k,l])=>{
     const tot=ps.reduce((s,x)=>s+Math.max(0,per[x][k]),0)||1;
-    return `<div class="kpi" id="kpi-${k}"><div class="l">${l}</div><div class="v">${k==='net'?sgn(c[k]):fmt(c[k])}</div>${dHtml(p?pct(c[k],p[k]):null)} <span class="vs">${vs}</span>
+    return `<div class="kpi" id="kpi-${k}"><div class="l">${l}</div><div class="v">${k==='net'?sgn(c[k]):fmt(c[k])}</div>${(()=>{const d=p?pct(c[k],p[k]):null;return d==null?`<span class="vs">${S.range==='all'?'All time':'Last '+w.n+' days'+(k==='net'?'':' · not enough earlier data to compare yet')}</span>`:dHtml(d)+` <span class="vs">${vs}</span>`})()}
     <div class="split" title="Share by platform">${ps.map(x=>`<span style="width:${Math.max(0,per[x][k])/tot*100}%;background:${PL[x].c}" title="${PL[x].name}: ${fmt(per[x][k])}"></span>`).join('')}</div></div>`}).join('');
 }
 
@@ -401,7 +402,7 @@ function renderPlats(){
       <header><h2>${PL[p].name}</h2><span class="h">${esc(acct)}</span></header>
       <div><div class="k vs">${p==='youtube'?'Subscribers':'Followers'}</div><div class="fol"><span class="v">${fmt(tot)}</span><span class="d ${c.net>=0?'up':'dn'}">${sgn(c.net)} this period</span></div></div>
       ${spark}
-      <div class="stats">${st.map(s=>`<div><div class="k">${s[0]}</div><div class="v">${s[1]}</div>${S.range==='all'?'':dHtml(s[2],s[3])}</div>`).join('')}</div>
+      <div class="stats">${st.map(s=>`<div><div class="k">${s[0]}</div><div class="v">${s[1]}</div>${s[2]==null?'':dHtml(s[2],s[3])}</div>`).join('')}</div>
       <div class="topp"><div class="k">Top post this period</div>${top?`<div class="t">${esc(top.title)}</div><div class="meta">${esc(dlab(top.scheduled_at))} · ${fmt(top.metrics.views)} views · ${fmt(top.metrics.likes)} likes · ${(er(top.metrics)??0).toFixed(1)}% eng.${topLink}</div>`:'<div class="empty">No posted uploads with metrics yet</div>'}</div>
     </article>`}).join('');
   $('#platCards').innerHTML=html||'<p class="empty">Pick at least one platform above.</p>';
