@@ -4,7 +4,7 @@
   "timezone": "Asia/Singapore",
   "as_of": "2026-11-26",
   "source": "Metricool",
-  "pulled_at": "2026-11-26T05:05:00+08:00",
+  "pulled_at": "2026-11-26T06:05:00+08:00",
   "data_url": "",
   "youtube_source": "Windsor.ai"
  },
@@ -517,7 +517,7 @@
    "post_url": "https://www.youtube.com/shorts/yswePmy1t9o",
    "media": "https://static.metricool.com/planner/202611/8247679-file-14522259418541003857.mp4",
    "metrics": {
-    "views": 144,
+    "views": 182,
     "likes": 5,
     "comments": 0,
     "shares": null
@@ -571,7 +571,7 @@
    "post_url": "https://www.youtube.com/shorts/2EaMN62nqH8",
    "media": "https://static.metricool.com/planner/202611/8247679-file-11911696167300542856.mp4",
    "metrics": {
-    "views": 156,
+    "views": 162,
     "likes": 3,
     "comments": 0,
     "shares": null
@@ -651,7 +651,7 @@
    "post_url": "https://www.youtube.com/shorts/_F0h9Cy6pSA",
    "media": "https://static.metricool.com/planner/202611/8247679-file-12558694310699675199.mp4",
    "metrics": {
-    "views": 187,
+    "views": 188,
     "likes": 6,
     "comments": 0,
     "shares": 1
@@ -683,7 +683,7 @@
    "title": "Blue Flower Ring ✨ | Precious Jewellery Designs",
    "url": "https://www.youtube.com/watch?v=yswePmy1t9o",
    "thumb": "https://i.ytimg.com/vi/yswePmy1t9o/hqdefault.jpg",
-   "views": 144,
+   "views": 182,
    "likes": 5,
    "comments": 0,
    "shares": null,
@@ -734,7 +734,7 @@
    "title": "Leaf Halo Ring ✨ | Precious Jewellery Designs",
    "url": "https://www.youtube.com/watch?v=2EaMN62nqH8",
    "thumb": "https://i.ytimg.com/vi/2EaMN62nqH8/hqdefault.jpg",
-   "views": 156,
+   "views": 162,
    "likes": 3,
    "comments": 0,
    "shares": null,
@@ -802,7 +802,7 @@
    "title": "Floral Vine Ring 🌿 | Precious Jewellery Designs",
    "url": "https://www.youtube.com/watch?v=_F0h9Cy6pSA",
    "thumb": "https://i.ytimg.com/vi/_F0h9Cy6pSA/hqdefault.jpg",
-   "views": 187,
+   "views": 188,
    "likes": 6,
    "comments": 0,
    "shares": 1,
