@@ -4,7 +4,7 @@
   "timezone": "Asia/Singapore",
   "as_of": "2026-11-27",
   "source": "Metricool",
-  "pulled_at": "2026-11-27T00:05:00+08:00",
+  "pulled_at": "2026-11-27T01:05:00+08:00",
   "data_url": "",
   "youtube_source": "Windsor.ai"
  },
@@ -352,7 +352,7 @@
    "platform": "instagram",
    "followers_total": 144,
    "views": 25,
-   "likes": 1,
+   "likes": 3,
    "comments": 0,
    "shares": 0,
    "followers_gained": 0,
@@ -422,9 +422,9 @@
   {
    "date": "2026-11-25",
    "platform": "instagram",
-   "followers_total": null,
-   "views": 10,
-   "likes": 2,
+   "followers_total": 146,
+   "views": 13,
+   "likes": 4,
    "comments": 0,
    "shares": 0,
    "followers_gained": 0,
@@ -457,15 +457,27 @@
   },
   {
    "date": "2026-11-26",
+   "platform": "instagram",
+   "followers_total": null,
+   "views": 23,
+   "likes": 3,
+   "comments": 0,
+   "shares": 0,
+   "followers_gained": 0,
+   "followers_lost": 0,
+   "saves": 0
+  },
+  {
+   "date": "2026-11-26",
    "platform": "youtube",
+   "followers_total": 9,
    "views": 0,
    "likes": 0,
    "comments": 0,
    "shares": 0,
    "followers_gained": 0,
    "followers_lost": 0,
-   "saves": 0,
-   "followers_total": 9
+   "saves": 0
   },
   {
    "date": "2026-11-27",
@@ -492,7 +504,12 @@
    "error": null,
    "post_url": "https://www.instagram.com/reel/DgM2tiehTjX/",
    "media": "https://static.metricool.com/planner/202611/8247679-file-9079239755613751141.mp4",
-   "metrics": null
+   "metrics": {
+    "views": 8,
+    "likes": 3,
+    "comments": 0,
+    "shares": 0
+   }
   },
   {
    "id": "442878916-tiktok",
@@ -537,8 +554,8 @@
    "post_url": "https://www.instagram.com/reel/DgKAh2zBQgS/",
    "media": "https://static.metricool.com/planner/202611/8247679-file-9993542132721920084.mp4",
    "metrics": {
-    "views": 10,
-    "likes": 1,
+    "views": 17,
+    "likes": 2,
     "comments": 0,
     "shares": 0
    }
@@ -591,8 +608,8 @@
    "post_url": "https://www.instagram.com/reel/DgJbqW6ClCJ/",
    "media": "https://static.metricool.com/planner/202611/8247679-file-5442569300860847470.mp4",
    "metrics": {
-    "views": 12,
-    "likes": 1,
+    "views": 19,
+    "likes": 2,
     "comments": 0,
     "shares": 0
    }
@@ -645,8 +662,8 @@
    "post_url": "https://www.instagram.com/reel/DgE2mMaj5Gf/",
    "media": "https://static.metricool.com/planner/202611/8247679-file-12558694310699675199.mp4",
    "metrics": {
-    "views": 27,
-    "likes": 1,
+    "views": 31,
+    "likes": 3,
     "comments": 0,
     "shares": 0
    }
@@ -716,23 +733,6 @@
  ],
  "posts": [
   {
-   "key": "DgM2tiehTjX",
-   "platform": "instagram",
-   "published": "2026-11-26T18:02:00+08:00",
-   "title": "Effortless elegance, one golden drop ✨💧",
-   "url": "https://www.instagram.com/reel/DgM2tiehTjX/",
-   "thumb": null,
-   "views": null,
-   "likes": null,
-   "comments": null,
-   "shares": null,
-   "saves": null,
-   "watch_seconds": null,
-   "avg_watch_seconds": null,
-   "completion_rate": null,
-   "media": "https://static.metricool.com/planner/202611/8247679-file-9079239755613751141.mp4"
-  },
-  {
    "key": "7712419696494136596",
    "platform": "tiktok",
    "published": "2026-11-26T18:02:00+08:00",
@@ -748,6 +748,23 @@
    "avg_watch_seconds": null,
    "completion_rate": null,
    "media": "https://static.metricool.com/planner/202611/8247679-file-11428670039242394335.mp4"
+  },
+  {
+   "key": "DgM2tiehTjX",
+   "platform": "instagram",
+   "published": "2026-11-26T10:08:46Z",
+   "title": "Effortless elegance, one golden drop ✨💧",
+   "url": "https://www.instagram.com/reel/DgM2tiehTjX/",
+   "thumb": "https://scontent-lhr6-2.cdninstagram.com/v/t51.71878-15/932619662_1669941651287959_7326494735470659809_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=110&_nc_map=urlgen_bucketless&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=79gJ3UWGL_UQ7kNvwG8T8A9&_nc_oc=AdojrucS5-sMw_853LuGpZIwbLMJ1-wFBsbb3cNq5qn9PxYBDWgaiYuHCcjiiuIkdKs&_nc_zt=23&_nc_ht=scontent-lhr6-2.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=OJBwP5HGf3kZQzVDFn1OeQ&_nc_tpa=Q5bMBQK4eSb-zeDZ3q4NcQlHYM6Ac0KzUGtyoWxrfIDuSv8mXAjjoW01mjOnybfXN7E0Ppuq7alC1P2wUA&_nc_ct=RQosPBUKFQoAAAA&oh=00_AQQulOO8Ya8C0X8HX98Fb0q3OYqdq4URXHJ9sg3dR2P3Vw&oe=6B0E22E9",
+   "views": 8,
+   "likes": 3,
+   "comments": 0,
+   "shares": 0,
+   "saves": 0,
+   "watch_seconds": 40.7,
+   "avg_watch_seconds": 8.14,
+   "completion_rate": null,
+   "media": "https://static.metricool.com/planner/202611/8247679-file-9079239755613751141.mp4"
   },
   {
    "key": "m9WySEU9D2o",
@@ -772,14 +789,14 @@
    "published": "2026-11-25T07:36:47Z",
    "title": "A little bloom of blue, forever in gold 💙✨",
    "url": "https://www.instagram.com/reel/DgKAh2zBQgS/",
-   "thumb": "https://scontent-lhr6-1.cdninstagram.com/v/t51.71878-15/928336378_2091828108164711_8862053669154313776_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&_nc_map=urlgen_bucketless&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=I8kD3ixzj5oQ7kNvwG5Cf3c&_nc_oc=AdpqAfjaFHr6mYHO4fVwU4ML-r4F_ikbWK1mrDf1I-gT5Tqd5hGfMUBX83wU8MxII7A&_nc_zt=23&_nc_ht=scontent-lhr6-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=JZOhUD1Uc5AbhSG5S7rvWQ&_nc_tpa=Q5bMBQK-LygaYbLw9qiQWEKPdpoEbmlF1m0vmyJ5I0GYxoIGy1KI4cdT-EuFJ8o7vPQfH7TD-gUUXxCr_w&_nc_ct=RQosPBUKFQoAAAA&oh=00_AQTnpW7n-iOp38JOzKqShnvJykMHurgX8CTBevGOQM32LQ&oe=6B0CE6F5",
-   "views": 10,
-   "likes": 1,
+   "thumb": "https://scontent-lhr6-1.cdninstagram.com/v/t51.71878-15/928336378_2091828108164711_8862053669154313776_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&_nc_map=urlgen_bucketless&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=I8kD3ixzj5oQ7kNvwFZL0uS&_nc_oc=Ado1OcZ20YEaczFI0--YCUuQEEHhaAMZ8gvcRW_wFKLmP6QUqOs7Fne7e5bFiWe_leQ&_nc_zt=23&_nc_ht=scontent-lhr6-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=OJBwP5HGf3kZQzVDFn1OeQ&_nc_tpa=Q5bMBQLIefoQQZCW-fgSnkFA4yDxS5N1G5Z3zJUuH3BKD180Yir-A0l-PVJ3Tztm1maR18omoE_4Ne30iQ&_nc_ct=RQosPBUKFQoAAAA&oh=00_AQTWd99HJzQHjp1FNIUVv95yPxEp0w_PXuUPVohcEoc0Yg&oe=6B0E3875",
+   "views": 17,
+   "likes": 2,
    "comments": 0,
    "shares": 0,
    "saves": 0,
-   "watch_seconds": 28.3,
-   "avg_watch_seconds": 5.67,
+   "watch_seconds": 51.8,
+   "avg_watch_seconds": 5.18,
    "completion_rate": null,
    "media": "https://static.metricool.com/planner/202611/8247679-file-9993542132721920084.mp4"
   },
@@ -823,14 +840,14 @@
    "published": "2026-11-25T02:15:12Z",
    "title": "A halo of leaves, a heart of light ✨🍃",
    "url": "https://www.instagram.com/reel/DgJbqW6ClCJ/",
-   "thumb": "https://scontent-lhr6-2.cdninstagram.com/v/t51.71878-15/927547352_1171231978695013_5463625014207684272_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=109&_nc_map=urlgen_bucketless&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=MWqahKu43_UQ7kNvwFKpv-2&_nc_oc=Ador3W_fa2D1sjgOWDQiJakz9Ngx_JZhtuSw_d6VCbNxrSvJ12pZYDt6hEkDWcp-J2I&_nc_zt=23&_nc_ht=scontent-lhr6-2.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=JZOhUD1Uc5AbhSG5S7rvWQ&_nc_tpa=Q5bMBQI7bWnnqgvzrULYgMs7pEksFnAvybNRNZ_gxeto43kBGiuEO8pBPXCj-ZOWQRpQsEVRBxOIq3g1TA&_nc_ct=RQosPBUKFQoAAAA&oh=00_AQShq5UHCxhV52D9qs0hE8BdFUsKow0iEOjlPZ-v0DAOAg&oe=6B0CDDF3",
-   "views": 12,
-   "likes": 1,
+   "thumb": "https://scontent-lhr6-2.cdninstagram.com/v/t51.71878-15/927547352_1171231978695013_5463625014207684272_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=109&_nc_map=urlgen_bucketless&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=MWqahKu43_UQ7kNvwE_ClXD&_nc_oc=AdrzeefarI858VvbhjIpuWLk9aN08Twdln_TAc0GXEvOlwgQlhMSocCs-PWv7sSsH-E&_nc_zt=23&_nc_ht=scontent-lhr6-2.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=OJBwP5HGf3kZQzVDFn1OeQ&_nc_tpa=Q5bMBQIB-LsxqieliyVuOWfcYIvqlyB-ogDJdO1yK4yotxh419xWDXw8ZDQ_v9Yc1Oz74jlVjGtjEbVS1Q&_nc_ct=RQosPBUKFQoAAAA&oh=00_AQQ9-69fX706ypqkcbSvNQmDHgZ0y7TAEXP1mp5ONQZ91g&oe=6B0E2F73",
+   "views": 19,
+   "likes": 2,
    "comments": 0,
    "shares": 0,
    "saves": 0,
-   "watch_seconds": 47.9,
-   "avg_watch_seconds": 5.32,
+   "watch_seconds": 76.5,
+   "avg_watch_seconds": 5.1,
    "completion_rate": null,
    "media": "https://static.metricool.com/planner/202611/8247679-file-5442569300860847470.mp4"
   },
@@ -874,14 +891,14 @@
    "published": "2026-11-23T07:34:54Z",
    "title": "Nature, set in gold 🌿✨",
    "url": "https://www.instagram.com/reel/DgE2mMaj5Gf/",
-   "thumb": "https://scontent-lhr11-1.cdninstagram.com/v/t51.71878-15/927530900_1616403763834286_5519120875822770835_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&_nc_map=urlgen_bucketless&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=tiih6F7o5K0Q7kNvwH7dMtr&_nc_oc=AdopVGovr3n9IgVMrrJRJ7USu5GVn4rZ18C7dlGSRbMI6RvuF7C2iqwn5cW0kYHiwWU&_nc_zt=23&_nc_ht=scontent-lhr11-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=JZOhUD1Uc5AbhSG5S7rvWQ&_nc_tpa=Q5bMBQLPX3E4DQGMAmyHUAWgX0Cg3tyeffdSGZAgtiqJ7n8WZz9NMSW4-QZbWEVIslczZin63uNFXUoTsQ&_nc_ct=RQosPBUKFQQAAAA&oh=00_AQRFRsEA8j6Ry4F3P3diUJCnXqj9ley0knzS7uP3huPPkg&oe=6B0CCCA8",
-   "views": 27,
-   "likes": 1,
+   "thumb": "https://scontent-lhr11-1.cdninstagram.com/v/t51.71878-15/927530900_1616403763834286_5519120875822770835_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&_nc_map=urlgen_bucketless&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=tiih6F7o5K0Q7kNvwGeaCLR&_nc_oc=AdpYa1P3oZNuE1IMLjJJzjJ8wqsSb3KJXSh_Sb2E-0JIY4qvR1ZUeP1OOkv7FEHopzc&_nc_zt=23&_nc_ht=scontent-lhr11-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=OJBwP5HGf3kZQzVDFn1OeQ&_nc_tpa=Q5bMBQJusxieqaVfPVh_sm_Pp4aCNCC-bdOygFxY841wCmDXyEWR3oKgoEjh5z_JeQZMKB0UtpU3d1FPtg&_nc_ct=RQosPBUKFQQAAAA&oh=00_AQSF-ljObsuAt9D2tsFFVUtGOs6LiD41VxFRxouyeRUD8A&oe=6B0E1E28",
+   "views": 31,
+   "likes": 3,
    "comments": 0,
    "shares": 0,
    "saves": 0,
-   "watch_seconds": 76.1,
-   "avg_watch_seconds": 3.62,
+   "watch_seconds": 88.3,
+   "avg_watch_seconds": 3.53,
    "completion_rate": null,
    "media": "https://static.metricool.com/planner/202611/8247679-file-12558694310699675199.mp4"
   },
@@ -1347,6 +1364,126 @@
  ],
  "best_times": {
   "instagram": [
+   [
+    4,
+    0,
+    556.0
+   ],
+   [
+    4,
+    1,
+    384.0
+   ],
+   [
+    4,
+    2,
+    221.0
+   ],
+   [
+    4,
+    3,
+    174.0
+   ],
+   [
+    4,
+    4,
+    182.0
+   ],
+   [
+    4,
+    5,
+    412.0
+   ],
+   [
+    4,
+    6,
+    1082.0
+   ],
+   [
+    4,
+    7,
+    1996.0
+   ],
+   [
+    4,
+    8,
+    3269.0
+   ],
+   [
+    4,
+    9,
+    4737.0
+   ],
+   [
+    4,
+    10,
+    6275.0
+   ],
+   [
+    4,
+    11,
+    5713.0
+   ],
+   [
+    4,
+    12,
+    5730.0
+   ],
+   [
+    4,
+    13,
+    4438.0
+   ],
+   [
+    4,
+    14,
+    4261.0
+   ],
+   [
+    4,
+    15,
+    4563.0
+   ],
+   [
+    4,
+    16,
+    4515.0
+   ],
+   [
+    4,
+    17,
+    4697.0
+   ],
+   [
+    4,
+    18,
+    5078.0
+   ],
+   [
+    4,
+    19,
+    4124.0
+   ],
+   [
+    4,
+    20,
+    3156.0
+   ],
+   [
+    4,
+    21,
+    1834.0
+   ],
+   [
+    4,
+    22,
+    1034.0
+   ],
+   [
+    4,
+    23,
+    688.0
+   ],
    [
     5,
     0,
@@ -2066,129 +2203,129 @@
     3,
     23,
     706.0
-   ],
+   ]
+  ],
+  "tiktok": [
    [
     4,
     0,
-    556.0
+    188.0
    ],
    [
     4,
     1,
-    384.0
+    126.0
    ],
    [
     4,
     2,
-    221.0
+    88.0
    ],
    [
     4,
     3,
-    174.0
+    85.0
    ],
    [
     4,
     4,
-    182.0
+    78.0
    ],
    [
     4,
     5,
-    412.0
+    118.0
    ],
    [
     4,
     6,
-    1082.0
+    239.0
    ],
    [
     4,
     7,
-    1996.0
+    425.0
    ],
    [
     4,
     8,
-    3269.0
+    630.0
    ],
    [
     4,
     9,
-    4737.0
+    803.0
    ],
    [
     4,
     10,
-    6275.0
+    1471.0
    ],
    [
     4,
     11,
-    5713.0
+    978.0
    ],
    [
     4,
     12,
-    5730.0
+    1299.0
    ],
    [
     4,
     13,
-    4438.0
+    941.0
    ],
    [
     4,
     14,
-    4261.0
+    887.0
    ],
    [
     4,
     15,
-    4563.0
+    947.0
    ],
    [
     4,
     16,
-    4515.0
+    1118.0
    ],
    [
     4,
     17,
-    4697.0
+    1097.0
    ],
    [
     4,
     18,
-    5078.0
+    1378.0
    ],
    [
     4,
     19,
-    4124.0
+    999.0
    ],
    [
     4,
     20,
-    3156.0
+    838.0
    ],
    [
     4,
     21,
-    1834.0
+    643.0
    ],
    [
     4,
     22,
-    1034.0
+    439.0
    ],
    [
     4,
     23,
-    688.0
-   ]
-  ],
-  "tiktok": [
+    280.0
+   ],
    [
     5,
     0,
@@ -2908,129 +3045,129 @@
     3,
     23,
     279.0
-   ],
+   ]
+  ],
+  "youtube": [
    [
     4,
     0,
-    188.0
+    2352.0
    ],
    [
     4,
     1,
-    126.0
+    1897.0
    ],
    [
     4,
     2,
-    88.0
+    1851.0
    ],
    [
     4,
     3,
-    85.0
+    1875.0
    ],
    [
     4,
     4,
-    78.0
+    2847.0
    ],
    [
     4,
     5,
-    118.0
+    3758.0
    ],
    [
     4,
     6,
-    239.0
+    5264.0
    ],
    [
     4,
     7,
-    425.0
+    6800.0
    ],
    [
     4,
     8,
-    630.0
+    8194.0
    ],
    [
     4,
     9,
-    803.0
+    8871.0
    ],
    [
     4,
     10,
-    1471.0
+    10723.0
    ],
    [
     4,
     11,
-    978.0
+    8785.0
    ],
    [
     4,
     12,
-    1299.0
+    9133.0
    ],
    [
     4,
     13,
-    941.0
+    9682.0
    ],
    [
     4,
     14,
-    887.0
+    10183.0
    ],
    [
     4,
     15,
-    947.0
+    10571.0
    ],
    [
     4,
     16,
-    1118.0
+    11979.0
    ],
    [
     4,
     17,
-    1097.0
+    10004.0
    ],
    [
     4,
     18,
-    1378.0
+    9656.0
    ],
    [
     4,
     19,
-    999.0
+    7943.0
    ],
    [
     4,
     20,
-    838.0
+    6087.0
    ],
    [
     4,
     21,
-    643.0
+    4789.0
    ],
    [
     4,
     22,
-    439.0
+    4198.0
    ],
    [
     4,
     23,
-    280.0
-   ]
-  ],
-  "youtube": [
+    2850.0
+   ],
    [
     5,
     0,
@@ -3750,126 +3887,6 @@
     3,
     23,
     2800.0
-   ],
-   [
-    4,
-    0,
-    2352.0
-   ],
-   [
-    4,
-    1,
-    1897.0
-   ],
-   [
-    4,
-    2,
-    1851.0
-   ],
-   [
-    4,
-    3,
-    1875.0
-   ],
-   [
-    4,
-    4,
-    2847.0
-   ],
-   [
-    4,
-    5,
-    3758.0
-   ],
-   [
-    4,
-    6,
-    5264.0
-   ],
-   [
-    4,
-    7,
-    6800.0
-   ],
-   [
-    4,
-    8,
-    8194.0
-   ],
-   [
-    4,
-    9,
-    8871.0
-   ],
-   [
-    4,
-    10,
-    10723.0
-   ],
-   [
-    4,
-    11,
-    8785.0
-   ],
-   [
-    4,
-    12,
-    9133.0
-   ],
-   [
-    4,
-    13,
-    9682.0
-   ],
-   [
-    4,
-    14,
-    10183.0
-   ],
-   [
-    4,
-    15,
-    10571.0
-   ],
-   [
-    4,
-    16,
-    11979.0
-   ],
-   [
-    4,
-    17,
-    10004.0
-   ],
-   [
-    4,
-    18,
-    9656.0
-   ],
-   [
-    4,
-    19,
-    7943.0
-   ],
-   [
-    4,
-    20,
-    6087.0
-   ],
-   [
-    4,
-    21,
-    4789.0
-   ],
-   [
-    4,
-    22,
-    4198.0
-   ],
-   [
-    4,
-    23,
-    2850.0
    ]
   ]
  }
