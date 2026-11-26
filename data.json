@@ -4,7 +4,7 @@
   "timezone": "Asia/Singapore",
   "as_of": "2026-11-26",
   "source": "Metricool",
-  "pulled_at": "2026-11-26T09:05:00+08:00",
+  "pulled_at": "2026-11-26T10:05:00+08:00",
   "data_url": "",
   "youtube_source": "Windsor.ai"
  },
@@ -375,11 +375,11 @@
    "date": "2026-11-23",
    "platform": "youtube",
    "followers_total": 9,
-   "views": 0,
-   "likes": 0,
+   "views": 79,
+   "likes": 4,
    "comments": 0,
    "shares": 0,
-   "followers_gained": 0,
+   "followers_gained": 1,
    "followers_lost": 0,
    "saves": 0
   },
