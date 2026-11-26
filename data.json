@@ -4,7 +4,7 @@
   "timezone": "Asia/Singapore",
   "as_of": "2026-11-27",
   "source": "Metricool",
-  "pulled_at": "2026-11-27T06:05:00+08:00",
+  "pulled_at": "2026-11-27T07:05:00+08:00",
   "data_url": "",
   "youtube_source": "Windsor.ai"
  },
@@ -664,7 +664,7 @@
     "views": 267,
     "likes": 6,
     "comments": 0,
-    "shares": null
+    "shares": 1
    }
   },
   {
@@ -878,10 +878,10 @@
    "views": 267,
    "likes": 6,
    "comments": 0,
-   "shares": null,
+   "shares": 1,
    "saves": null,
-   "watch_seconds": null,
-   "avg_watch_seconds": null,
+   "watch_seconds": 480.0,
+   "avg_watch_seconds": 17.7778,
    "completion_rate": null,
    "media": "https://static.metricool.com/planner/202611/8247679-file-11911696167300542856.mp4"
   },
@@ -948,8 +948,8 @@
    "comments": 0,
    "shares": 1,
    "saves": null,
-   "watch_seconds": 480.0,
-   "avg_watch_seconds": 19.2,
+   "watch_seconds": 780.0,
+   "avg_watch_seconds": 16.5957,
    "completion_rate": null,
    "media": "https://static.metricool.com/planner/202611/8247679-file-12558694310699675199.mp4"
   },
