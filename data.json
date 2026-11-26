@@ -4,7 +4,7 @@
   "timezone": "Asia/Singapore",
   "as_of": "2026-11-26",
   "source": "Metricool",
-  "pulled_at": "2026-11-26T19:05:00+08:00",
+  "pulled_at": "2026-11-26T20:05:00+08:00",
   "data_url": "",
   "youtube_source": "Windsor.ai"
  },
@@ -506,7 +506,12 @@
    "error": null,
    "post_url": "https://www.youtube.com/shorts/m9WySEU9D2o",
    "media": "https://static.metricool.com/planner/202611/8247679-file-9295986310786509901.mp4",
-   "metrics": null
+   "metrics": {
+    "views": 0,
+    "likes": 0,
+    "comments": 0,
+    "shares": null
+   }
   },
   {
    "id": "441353437-instagram",
@@ -556,8 +561,8 @@
    "post_url": "https://www.youtube.com/shorts/yswePmy1t9o",
    "media": "https://static.metricool.com/planner/202611/8247679-file-14522259418541003857.mp4",
    "metrics": {
-    "views": 183,
-    "likes": 5,
+    "views": 244,
+    "likes": 11,
     "comments": 0,
     "shares": null
    }
@@ -610,8 +615,8 @@
    "post_url": "https://www.youtube.com/shorts/2EaMN62nqH8",
    "media": "https://static.metricool.com/planner/202611/8247679-file-11911696167300542856.mp4",
    "metrics": {
-    "views": 162,
-    "likes": 3,
+    "views": 186,
+    "likes": 5,
     "comments": 0,
     "shares": null
    }
@@ -690,7 +695,7 @@
    "post_url": "https://www.youtube.com/shorts/_F0h9Cy6pSA",
    "media": "https://static.metricool.com/planner/202611/8247679-file-12558694310699675199.mp4",
    "metrics": {
-    "views": 188,
+    "views": 189,
     "likes": 6,
     "comments": 0,
     "shares": 1
@@ -735,13 +740,13 @@
   {
    "key": "m9WySEU9D2o",
    "platform": "youtube",
-   "published": "2026-11-26T18:02:00+08:00",
+   "published": "2026-11-26T10:08:00Z",
    "title": "Pear Drop Pendant ✨ | Precious Jewellery Designs",
-   "url": "https://www.youtube.com/shorts/m9WySEU9D2o",
+   "url": "https://www.youtube.com/watch?v=m9WySEU9D2o",
    "thumb": "https://i.ytimg.com/vi/m9WySEU9D2o/hqdefault.jpg",
-   "views": null,
-   "likes": null,
-   "comments": null,
+   "views": 0,
+   "likes": 0,
+   "comments": 0,
    "shares": null,
    "saves": null,
    "watch_seconds": null,
@@ -773,8 +778,8 @@
    "title": "Blue Flower Ring ✨ | Precious Jewellery Designs",
    "url": "https://www.youtube.com/watch?v=yswePmy1t9o",
    "thumb": "https://i.ytimg.com/vi/yswePmy1t9o/hqdefault.jpg",
-   "views": 183,
-   "likes": 5,
+   "views": 244,
+   "likes": 11,
    "comments": 0,
    "shares": null,
    "saves": null,
@@ -824,8 +829,8 @@
    "title": "Leaf Halo Ring ✨ | Precious Jewellery Designs",
    "url": "https://www.youtube.com/watch?v=2EaMN62nqH8",
    "thumb": "https://i.ytimg.com/vi/2EaMN62nqH8/hqdefault.jpg",
-   "views": 162,
-   "likes": 3,
+   "views": 186,
+   "likes": 5,
    "comments": 0,
    "shares": null,
    "saves": null,
@@ -892,7 +897,7 @@
    "title": "Floral Vine Ring 🌿 | Precious Jewellery Designs",
    "url": "https://www.youtube.com/watch?v=_F0h9Cy6pSA",
    "thumb": "https://i.ytimg.com/vi/_F0h9Cy6pSA/hqdefault.jpg",
-   "views": 188,
+   "views": 189,
    "likes": 6,
    "comments": 0,
    "shares": 1,
@@ -943,7 +948,7 @@
    "title": "Striped Rings!",
    "url": "https://www.youtube.com/watch?v=B_pfPw0Xkxs",
    "thumb": "https://i.ytimg.com/vi/B_pfPw0Xkxs/hqdefault.jpg",
-   "views": 3,
+   "views": 4,
    "likes": 0,
    "comments": 0,
    "shares": null,
@@ -1317,7 +1322,7 @@
    "title": "Personalize Your Jewellery!",
    "url": "https://www.youtube.com/watch?v=M5W3XTvsHfs",
    "thumb": "https://i.ytimg.com/vi/M5W3XTvsHfs/hqdefault.jpg",
-   "views": 7,
+   "views": 8,
    "likes": 0,
    "comments": 0,
    "shares": null,
