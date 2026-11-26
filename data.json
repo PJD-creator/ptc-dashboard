@@ -4,7 +4,7 @@
   "timezone": "Asia/Singapore",
   "as_of": "2026-11-26",
   "source": "Metricool",
-  "pulled_at": "2026-11-26T17:05:00+08:00",
+  "pulled_at": "2026-11-26T18:05:00+08:00",
   "data_url": "",
   "youtube_source": "Windsor.ai"
  },
@@ -469,6 +469,45 @@
   }
  ],
  "uploads": [
+  {
+   "id": "442878864-instagram",
+   "platform": "instagram",
+   "title": "Effortless elegance, one golden drop ✨💧",
+   "workflow": "Metricool · auto-publish",
+   "scheduled_at": "2026-11-26T18:02:00+08:00",
+   "posted_at": null,
+   "status": "pending",
+   "error": null,
+   "post_url": null,
+   "media": "https://static.metricool.com/planner/202611/8247679-file-9079239755613751141.mp4",
+   "metrics": null
+  },
+  {
+   "id": "442878916-tiktok",
+   "platform": "tiktok",
+   "title": "Pear Drop Pendant 💧",
+   "workflow": "Metricool · auto-publish",
+   "scheduled_at": "2026-11-26T18:02:00+08:00",
+   "posted_at": null,
+   "status": "pending",
+   "error": null,
+   "post_url": null,
+   "media": "https://static.metricool.com/planner/202611/8247679-file-11428670039242394335.mp4",
+   "metrics": null
+  },
+  {
+   "id": "442879003-youtube",
+   "platform": "youtube",
+   "title": "Pear Drop Pendant ✨ | Precious Jewellery Designs",
+   "workflow": "Metricool · auto-publish",
+   "scheduled_at": "2026-11-26T18:02:00+08:00",
+   "posted_at": null,
+   "status": "pending",
+   "error": null,
+   "post_url": null,
+   "media": "https://static.metricool.com/planner/202611/8247679-file-9295986310786509901.mp4",
+   "metrics": null
+  },
   {
    "id": "441353437-instagram",
    "platform": "instagram",
