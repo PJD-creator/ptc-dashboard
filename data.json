@@ -2,9 +2,9 @@
  "meta": {
   "brand": "Precious Jewellery Designs",
   "timezone": "Asia/Singapore",
-  "as_of": "2026-11-27",
+  "as_of": "2026-11-28",
   "source": "Metricool",
-  "pulled_at": "2026-11-27T18:10:00+08:00",
+  "pulled_at": "2026-11-28T00:08:00+08:00",
   "data_url": "",
   "youtube_source": "Windsor.ai"
  },
@@ -502,6 +502,18 @@
    "followers_lost": 0,
    "saves": 0,
    "followers_total": 9
+  },
+  {
+   "date": "2026-11-28",
+   "platform": "youtube",
+   "views": 0,
+   "likes": 0,
+   "comments": 0,
+   "shares": 0,
+   "followers_gained": 0,
+   "followers_lost": 0,
+   "saves": 0,
+   "followers_total": 9
   }
  ],
  "uploads": [
@@ -543,8 +555,8 @@
    "post_url": "https://www.youtube.com/shorts/HEJN6qeXgIk",
    "media": "https://static.metricool.com/planner/202611/8247679-file-2704642240938474955.mp4",
    "metrics": {
-    "views": 0,
-    "likes": 0,
+    "views": 78,
+    "likes": 3,
     "comments": 0,
     "shares": null
    }
@@ -597,7 +609,7 @@
    "post_url": "https://www.youtube.com/shorts/m9WySEU9D2o",
    "media": "https://static.metricool.com/planner/202611/8247679-file-9295986310786509901.mp4",
    "metrics": {
-    "views": 34,
+    "views": 41,
     "likes": 0,
     "comments": 0,
     "shares": null
@@ -651,8 +663,8 @@
    "post_url": "https://www.youtube.com/shorts/yswePmy1t9o",
    "media": "https://static.metricool.com/planner/202611/8247679-file-14522259418541003857.mp4",
    "metrics": {
-    "views": 490,
-    "likes": 14,
+    "views": 510,
+    "likes": 15,
     "comments": 0,
     "shares": null
    }
@@ -834,8 +846,8 @@
    "title": "Heart Ring in Gold ✨ | Precious Jewellery Designs",
    "url": "https://www.youtube.com/watch?v=HEJN6qeXgIk",
    "thumb": "https://i.ytimg.com/vi/HEJN6qeXgIk/hqdefault.jpg",
-   "views": 0,
-   "likes": 0,
+   "views": 78,
+   "likes": 3,
    "comments": 0,
    "shares": null,
    "saves": null,
@@ -868,7 +880,7 @@
    "title": "Pear Drop Pendant ✨ | Precious Jewellery Designs",
    "url": "https://www.youtube.com/watch?v=m9WySEU9D2o",
    "thumb": "https://i.ytimg.com/vi/m9WySEU9D2o/hqdefault.jpg",
-   "views": 34,
+   "views": 41,
    "likes": 0,
    "comments": 0,
    "shares": null,
@@ -919,8 +931,8 @@
    "title": "Blue Flower Ring ✨ | Precious Jewellery Designs",
    "url": "https://www.youtube.com/watch?v=yswePmy1t9o",
    "thumb": "https://i.ytimg.com/vi/yswePmy1t9o/hqdefault.jpg",
-   "views": 490,
-   "likes": 14,
+   "views": 510,
+   "likes": 15,
    "comments": 0,
    "shares": null,
    "saves": null,
@@ -1344,7 +1356,7 @@
    "title": "Precious Jewellery Designs   Silver!",
    "url": "https://www.youtube.com/watch?v=udtOyIERmtM",
    "thumb": "https://i.ytimg.com/vi/udtOyIERmtM/hqdefault.jpg",
-   "views": 10,
+   "views": 11,
    "likes": 0,
    "comments": 0,
    "shares": null,
@@ -1361,7 +1373,7 @@
    "title": "Making of Gold Chain!",
    "url": "https://www.youtube.com/watch?v=ZkRozCtNFK4",
    "thumb": "https://i.ytimg.com/vi/ZkRozCtNFK4/hqdefault.jpg",
-   "views": 22,
+   "views": 23,
    "likes": 2,
    "comments": 0,
    "shares": null,
@@ -1476,126 +1488,6 @@
  ],
  "best_times": {
   "instagram": [
-   [
-    5,
-    0,
-    576.0
-   ],
-   [
-    5,
-    1,
-    401.0
-   ],
-   [
-    5,
-    2,
-    226.0
-   ],
-   [
-    5,
-    3,
-    176.0
-   ],
-   [
-    5,
-    4,
-    247.0
-   ],
-   [
-    5,
-    5,
-    470.0
-   ],
-   [
-    5,
-    6,
-    1120.0
-   ],
-   [
-    5,
-    7,
-    1908.0
-   ],
-   [
-    5,
-    8,
-    3573.0
-   ],
-   [
-    5,
-    9,
-    5039.0
-   ],
-   [
-    5,
-    10,
-    6734.0
-   ],
-   [
-    5,
-    11,
-    5952.0
-   ],
-   [
-    5,
-    12,
-    5909.0
-   ],
-   [
-    5,
-    13,
-    4641.0
-   ],
-   [
-    5,
-    14,
-    4336.0
-   ],
-   [
-    5,
-    15,
-    4517.0
-   ],
-   [
-    5,
-    16,
-    4490.0
-   ],
-   [
-    5,
-    17,
-    4570.0
-   ],
-   [
-    5,
-    18,
-    4418.0
-   ],
-   [
-    5,
-    19,
-    3360.0
-   ],
-   [
-    5,
-    20,
-    2339.0
-   ],
-   [
-    5,
-    21,
-    1440.0
-   ],
-   [
-    5,
-    22,
-    864.0
-   ],
-   [
-    5,
-    23,
-    546.0
-   ],
    [
     6,
     0,
@@ -2315,129 +2207,129 @@
     4,
     23,
     688.0
-   ]
-  ],
-  "tiktok": [
+   ],
    [
     5,
     0,
-    175.0
+    576.0
    ],
    [
     5,
     1,
-    113.0
+    401.0
    ],
    [
     5,
     2,
-    101.0
-   ],
-   [
-    5,
-    3,
-    85.0
-   ],
-   [
-    5,
-    4,
-    79.0
-   ],
-   [
-    5,
-    5,
-    81.0
-   ],
-   [
-    5,
-    6,
     226.0
    ],
    [
     5,
+    3,
+    176.0
+   ],
+   [
+    5,
+    4,
+    247.0
+   ],
+   [
+    5,
+    5,
+    470.0
+   ],
+   [
+    5,
+    6,
+    1120.0
+   ],
+   [
+    5,
     7,
-    444.0
+    1908.0
    ],
    [
     5,
     8,
-    684.0
+    3573.0
    ],
    [
     5,
     9,
-    890.0
+    5039.0
    ],
    [
     5,
     10,
-    1379.0
+    6734.0
    ],
    [
     5,
     11,
-    899.0
+    5952.0
    ],
    [
     5,
     12,
-    1251.0
+    5909.0
    ],
    [
     5,
     13,
-    876.0
+    4641.0
    ],
    [
     5,
     14,
-    854.0
+    4336.0
    ],
    [
     5,
     15,
-    978.0
+    4517.0
    ],
    [
     5,
     16,
-    1079.0
+    4490.0
    ],
    [
     5,
     17,
-    1044.0
+    4570.0
    ],
    [
     5,
     18,
-    1222.0
+    4418.0
    ],
    [
     5,
     19,
-    891.0
+    3360.0
    ],
    [
     5,
     20,
-    689.0
+    2339.0
    ],
    [
     5,
     21,
-    474.0
+    1440.0
    ],
    [
     5,
     22,
-    328.0
+    864.0
    ],
    [
     5,
     23,
-    294.0
-   ],
+    546.0
+   ]
+  ],
+  "tiktok": [
    [
     6,
     0,
@@ -3157,129 +3049,129 @@
     4,
     23,
     280.0
-   ]
-  ],
-  "youtube": [
+   ],
    [
     5,
     0,
-    2489.0
+    175.0
    ],
    [
     5,
     1,
-    2390.0
+    113.0
    ],
    [
     5,
     2,
-    2070.0
+    101.0
    ],
    [
     5,
     3,
-    2003.0
+    85.0
    ],
    [
     5,
     4,
-    2849.0
+    79.0
    ],
    [
     5,
     5,
-    3654.0
+    81.0
    ],
    [
     5,
     6,
-    5178.0
+    226.0
    ],
    [
     5,
     7,
-    7349.0
+    444.0
    ],
    [
     5,
     8,
-    8559.0
+    684.0
    ],
    [
     5,
     9,
-    8939.0
+    890.0
    ],
    [
     5,
     10,
-    10537.0
+    1379.0
    ],
    [
     5,
     11,
-    8803.0
+    899.0
    ],
    [
     5,
     12,
-    9297.0
+    1251.0
    ],
    [
     5,
     13,
-    10208.0
+    876.0
    ],
    [
     5,
     14,
-    10485.0
+    854.0
    ],
    [
     5,
     15,
-    10195.0
+    978.0
    ],
    [
     5,
     16,
-    10698.0
+    1079.0
    ],
    [
     5,
     17,
-    8930.0
+    1044.0
    ],
    [
     5,
     18,
-    8178.0
+    1222.0
    ],
    [
     5,
     19,
-    6448.0
+    891.0
    ],
    [
     5,
     20,
-    5280.0
+    689.0
    ],
    [
     5,
     21,
-    4115.0
+    474.0
    ],
    [
     5,
     22,
-    3262.0
+    328.0
    ],
    [
     5,
     23,
-    2308.0
-   ],
+    294.0
+   ]
+  ],
+  "youtube": [
    [
     6,
     0,
@@ -3999,6 +3891,126 @@
     4,
     23,
     2850.0
+   ],
+   [
+    5,
+    0,
+    2489.0
+   ],
+   [
+    5,
+    1,
+    2390.0
+   ],
+   [
+    5,
+    2,
+    2070.0
+   ],
+   [
+    5,
+    3,
+    2003.0
+   ],
+   [
+    5,
+    4,
+    2849.0
+   ],
+   [
+    5,
+    5,
+    3654.0
+   ],
+   [
+    5,
+    6,
+    5178.0
+   ],
+   [
+    5,
+    7,
+    7349.0
+   ],
+   [
+    5,
+    8,
+    8559.0
+   ],
+   [
+    5,
+    9,
+    8939.0
+   ],
+   [
+    5,
+    10,
+    10537.0
+   ],
+   [
+    5,
+    11,
+    8803.0
+   ],
+   [
+    5,
+    12,
+    9297.0
+   ],
+   [
+    5,
+    13,
+    10208.0
+   ],
+   [
+    5,
+    14,
+    10485.0
+   ],
+   [
+    5,
+    15,
+    10195.0
+   ],
+   [
+    5,
+    16,
+    10698.0
+   ],
+   [
+    5,
+    17,
+    8930.0
+   ],
+   [
+    5,
+    18,
+    8178.0
+   ],
+   [
+    5,
+    19,
+    6448.0
+   ],
+   [
+    5,
+    20,
+    5280.0
+   ],
+   [
+    5,
+    21,
+    4115.0
+   ],
+   [
+    5,
+    22,
+    3262.0
+   ],
+   [
+    5,
+    23,
+    2308.0
    ]
   ]
  }
