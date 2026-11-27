@@ -4,7 +4,7 @@
   "timezone": "Asia/Singapore",
   "as_of": "2026-11-28",
   "source": "Metricool",
-  "pulled_at": "2026-11-28T00:08:00+08:00",
+  "pulled_at": "2026-11-28T06:07:00+08:00",
   "data_url": "",
   "youtube_source": "Windsor.ai"
  },
@@ -458,12 +458,12 @@
   {
    "date": "2026-11-26",
    "platform": "instagram",
-   "followers_total": null,
-   "views": 23,
+   "followers_total": 146,
+   "views": 32,
    "likes": 3,
    "comments": 0,
    "shares": 0,
-   "followers_gained": 0,
+   "followers_gained": 2,
    "followers_lost": 0,
    "saves": 0
   },
@@ -493,15 +493,27 @@
   },
   {
    "date": "2026-11-27",
+   "platform": "instagram",
+   "followers_total": null,
+   "views": 56,
+   "likes": 0,
+   "comments": 0,
+   "shares": 4,
+   "followers_gained": 0,
+   "followers_lost": 0,
+   "saves": 0
+  },
+  {
+   "date": "2026-11-27",
    "platform": "youtube",
+   "followers_total": 9,
    "views": 0,
    "likes": 0,
    "comments": 0,
    "shares": 0,
    "followers_gained": 0,
    "followers_lost": 0,
-   "saves": 0,
-   "followers_total": 9
+   "saves": 0
   },
   {
    "date": "2026-11-28",
@@ -528,7 +540,12 @@
    "error": null,
    "post_url": "https://www.instagram.com/reel/DgPJyzVhDSS/",
    "media": "https://static.metricool.com/planner/202611/8247679-file-10793375646886642750.mp4",
-   "metrics": null
+   "metrics": {
+    "views": 22,
+    "likes": 0,
+    "comments": 0,
+    "shares": 4
+   }
   },
   {
    "id": "444012003-tiktok",
@@ -573,7 +590,7 @@
    "post_url": "https://www.instagram.com/reel/DgM2tiehTjX/",
    "media": "https://static.metricool.com/planner/202611/8247679-file-9079239755613751141.mp4",
    "metrics": {
-    "views": 8,
+    "views": 25,
     "likes": 3,
     "comments": 0,
     "shares": 0
@@ -627,7 +644,7 @@
    "post_url": "https://www.instagram.com/reel/DgKAh2zBQgS/",
    "media": "https://static.metricool.com/planner/202611/8247679-file-9993542132721920084.mp4",
    "metrics": {
-    "views": 17,
+    "views": 28,
     "likes": 2,
     "comments": 0,
     "shares": 0
@@ -681,7 +698,7 @@
    "post_url": "https://www.instagram.com/reel/DgJbqW6ClCJ/",
    "media": "https://static.metricool.com/planner/202611/8247679-file-5442569300860847470.mp4",
    "metrics": {
-    "views": 19,
+    "views": 21,
     "likes": 2,
     "comments": 0,
     "shares": 0
@@ -735,7 +752,7 @@
    "post_url": "https://www.instagram.com/reel/DgE2mMaj5Gf/",
    "media": "https://static.metricool.com/planner/202611/8247679-file-12558694310699675199.mp4",
    "metrics": {
-    "views": 31,
+    "views": 35,
     "likes": 3,
     "comments": 0,
     "shares": 0
@@ -806,23 +823,6 @@
  ],
  "posts": [
   {
-   "key": "DgPJyzVhDSS",
-   "platform": "instagram",
-   "published": "2026-11-27T15:33:00+08:00",
-   "title": "A heart set in gold, made to be treasured 💛✨",
-   "url": "https://www.instagram.com/reel/DgPJyzVhDSS/",
-   "thumb": null,
-   "views": null,
-   "likes": null,
-   "comments": null,
-   "shares": null,
-   "saves": null,
-   "watch_seconds": null,
-   "avg_watch_seconds": null,
-   "completion_rate": null,
-   "media": "https://static.metricool.com/planner/202611/8247679-file-10793375646886642750.mp4"
-  },
-  {
    "key": "7712751079917620500",
    "platform": "tiktok",
    "published": "2026-11-27T15:33:00+08:00",
@@ -838,6 +838,23 @@
    "avg_watch_seconds": null,
    "completion_rate": null,
    "media": "https://static.metricool.com/planner/202611/8247679-file-3670400790545059082.mp4"
+  },
+  {
+   "key": "DgPJyzVhDSS",
+   "platform": "instagram",
+   "published": "2026-11-27T07:34:53Z",
+   "title": "A heart set in gold, made to be treasured 💛✨",
+   "url": "https://www.instagram.com/reel/DgPJyzVhDSS/",
+   "thumb": "https://scontent-lhr6-1.cdninstagram.com/v/t51.71878-15/903005791_2241858696732180_6937910609136412772_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=109&_nc_map=urlgen_bucketless&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=-X27ol6yXw8Q7kNvwFkcSvr&_nc_oc=Adqqp-MA4lkQXWulGyzynBAQOKOhcrEAMH7XiIjGOKmruhbHiFR9QG9RiZML-n6PIH8&_nc_zt=23&_nc_ht=scontent-lhr6-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=gcIJKTozDYIIxZXU1atIdw&_nc_tpa=Q5bMBQKfTxNAtsmxtMd_i77Q5Gs1Al1NgJMfcuHzko2qsp6fkBgrCy6bbCKjLKX7hsltue6asY4Tzmv9aA&_nc_ct=RQosPBUKFQoAAAA&oh=00_AQXpjlldAWpTnWr1ZXPpmy25HLWGe5-O-mFMTuE9lGRWDA&oe=6B0F9CBF",
+   "views": 22,
+   "likes": 0,
+   "comments": 0,
+   "shares": 4,
+   "saves": 0,
+   "watch_seconds": 53.0,
+   "avg_watch_seconds": 3.12,
+   "completion_rate": null,
+   "media": "https://static.metricool.com/planner/202611/8247679-file-10793375646886642750.mp4"
   },
   {
    "key": "HEJN6qeXgIk",
@@ -862,14 +879,14 @@
    "published": "2026-11-26T10:08:46Z",
    "title": "Effortless elegance, one golden drop ✨💧",
    "url": "https://www.instagram.com/reel/DgM2tiehTjX/",
-   "thumb": "https://scontent-lhr6-2.cdninstagram.com/v/t51.71878-15/932619662_1669941651287959_7326494735470659809_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=110&_nc_map=urlgen_bucketless&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=79gJ3UWGL_UQ7kNvwG8T8A9&_nc_oc=AdojrucS5-sMw_853LuGpZIwbLMJ1-wFBsbb3cNq5qn9PxYBDWgaiYuHCcjiiuIkdKs&_nc_zt=23&_nc_ht=scontent-lhr6-2.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=OJBwP5HGf3kZQzVDFn1OeQ&_nc_tpa=Q5bMBQK4eSb-zeDZ3q4NcQlHYM6Ac0KzUGtyoWxrfIDuSv8mXAjjoW01mjOnybfXN7E0Ppuq7alC1P2wUA&_nc_ct=RQosPBUKFQoAAAA&oh=00_AQQulOO8Ya8C0X8HX98Fb0q3OYqdq4URXHJ9sg3dR2P3Vw&oe=6B0E22E9",
-   "views": 8,
+   "thumb": "https://scontent-lhr6-2.cdninstagram.com/v/t51.71878-15/932619662_1669941651287959_7326494735470659809_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=110&_nc_map=urlgen_bucketless&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=lAFRIGK8aggQ7kNvwF4Nr_C&_nc_oc=Adrr8VlCjgAhE5WA4PTJ86w7wj9ey3bnQDVPnyxGcmgLsDtm9OpXaouHdEmEtK8wjZA&_nc_zt=23&_nc_ht=scontent-lhr6-2.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=gcIJKTozDYIIxZXU1atIdw&_nc_tpa=Q5bMBQLylQSnyruMUVF__HQkXUgDGqmUZSXNQVxiZ8BjbuKe0wAsYOj0p_SQfMGg-1A8EE0wgLPbvunCAg&_nc_ct=RQosPBUKFQoAAAA&oh=00_AQXlKcQUNRl9GAwvP0eb8bxY4nCeEjCycykYveqGV07_Ew&oe=6B0F7469",
+   "views": 25,
    "likes": 3,
    "comments": 0,
    "shares": 0,
    "saves": 0,
-   "watch_seconds": 40.7,
-   "avg_watch_seconds": 8.14,
+   "watch_seconds": 108.6,
+   "avg_watch_seconds": 7.75,
    "completion_rate": null,
    "media": "https://static.metricool.com/planner/202611/8247679-file-9079239755613751141.mp4"
   },
@@ -913,14 +930,14 @@
    "published": "2026-11-25T07:36:47Z",
    "title": "A little bloom of blue, forever in gold 💙✨",
    "url": "https://www.instagram.com/reel/DgKAh2zBQgS/",
-   "thumb": "https://scontent-lhr6-1.cdninstagram.com/v/t51.71878-15/928336378_2091828108164711_8862053669154313776_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&_nc_map=urlgen_bucketless&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=I8kD3ixzj5oQ7kNvwFZL0uS&_nc_oc=Ado1OcZ20YEaczFI0--YCUuQEEHhaAMZ8gvcRW_wFKLmP6QUqOs7Fne7e5bFiWe_leQ&_nc_zt=23&_nc_ht=scontent-lhr6-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=OJBwP5HGf3kZQzVDFn1OeQ&_nc_tpa=Q5bMBQLIefoQQZCW-fgSnkFA4yDxS5N1G5Z3zJUuH3BKD180Yir-A0l-PVJ3Tztm1maR18omoE_4Ne30iQ&_nc_ct=RQosPBUKFQoAAAA&oh=00_AQTWd99HJzQHjp1FNIUVv95yPxEp0w_PXuUPVohcEoc0Yg&oe=6B0E3875",
-   "views": 17,
+   "thumb": "https://scontent-lhr6-1.cdninstagram.com/v/t51.71878-15/928336378_2091828108164711_8862053669154313776_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&_nc_map=urlgen_bucketless&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=I8kD3ixzj5oQ7kNvwG5Cf3c&_nc_oc=AdpqAfjaFHr6mYHO4fVwU4ML-r4F_ikbWK1mrDf1I-gT5Tqd5hGfMUBX83wU8MxII7A&_nc_zt=23&_nc_ht=scontent-lhr6-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=gcIJKTozDYIIxZXU1atIdw&_nc_tpa=Q5bMBQIFKi_-yKJ9X3W3wKFF_Wtew0XNiGaxucnSm8FH-dt_ILFL9YH8SbJLiBNBCyG8_nG7Bcp3ZKKaYw&_nc_ct=RQosPBUKFQoAAAA&oh=00_AQVBrZ8UlIpWOR_2U8JdgpMKuN28F-AjyVzfZaiG9DpKaw&oe=6B0F89F5",
+   "views": 28,
    "likes": 2,
    "comments": 0,
    "shares": 0,
    "saves": 0,
-   "watch_seconds": 51.8,
-   "avg_watch_seconds": 5.18,
+   "watch_seconds": 139.0,
+   "avg_watch_seconds": 9.27,
    "completion_rate": null,
    "media": "https://static.metricool.com/planner/202611/8247679-file-9993542132721920084.mp4"
   },
@@ -964,14 +981,14 @@
    "published": "2026-11-25T02:15:12Z",
    "title": "A halo of leaves, a heart of light ✨🍃",
    "url": "https://www.instagram.com/reel/DgJbqW6ClCJ/",
-   "thumb": "https://scontent-lhr6-2.cdninstagram.com/v/t51.71878-15/927547352_1171231978695013_5463625014207684272_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=109&_nc_map=urlgen_bucketless&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=MWqahKu43_UQ7kNvwE_ClXD&_nc_oc=AdrzeefarI858VvbhjIpuWLk9aN08Twdln_TAc0GXEvOlwgQlhMSocCs-PWv7sSsH-E&_nc_zt=23&_nc_ht=scontent-lhr6-2.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=OJBwP5HGf3kZQzVDFn1OeQ&_nc_tpa=Q5bMBQIB-LsxqieliyVuOWfcYIvqlyB-ogDJdO1yK4yotxh419xWDXw8ZDQ_v9Yc1Oz74jlVjGtjEbVS1Q&_nc_ct=RQosPBUKFQoAAAA&oh=00_AQQ9-69fX706ypqkcbSvNQmDHgZ0y7TAEXP1mp5ONQZ91g&oe=6B0E2F73",
-   "views": 19,
+   "thumb": "https://scontent-lhr6-2.cdninstagram.com/v/t51.71878-15/927547352_1171231978695013_5463625014207684272_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=109&_nc_map=urlgen_bucketless&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=MWqahKu43_UQ7kNvwFKpv-2&_nc_oc=Ador3W_fa2D1sjgOWDQiJakz9Ngx_JZhtuSw_d6VCbNxrSvJ12pZYDt6hEkDWcp-J2I&_nc_zt=23&_nc_ht=scontent-lhr6-2.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=gcIJKTozDYIIxZXU1atIdw&_nc_tpa=Q5bMBQJfuecDQ3yAD5RNp0bR7Jg6djBaHdT7rD_KACaNmffGt7WAysUv_KuzivEMfLimCPyWjTFhZOJNhA&_nc_ct=RQosPBUKFQoAAAA&oh=00_AQUpIBSIyMbo4g6LXD_wOrj-Aj-KLrYbtv1yuS4fn_aoDQ&oe=6B0F80F3",
+   "views": 21,
    "likes": 2,
    "comments": 0,
    "shares": 0,
    "saves": 0,
-   "watch_seconds": 76.5,
-   "avg_watch_seconds": 5.1,
+   "watch_seconds": 79.0,
+   "avg_watch_seconds": 4.65,
    "completion_rate": null,
    "media": "https://static.metricool.com/planner/202611/8247679-file-5442569300860847470.mp4"
   },
@@ -1015,14 +1032,14 @@
    "published": "2026-11-23T07:34:54Z",
    "title": "Nature, set in gold 🌿✨",
    "url": "https://www.instagram.com/reel/DgE2mMaj5Gf/",
-   "thumb": "https://scontent-lhr11-1.cdninstagram.com/v/t51.71878-15/927530900_1616403763834286_5519120875822770835_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&_nc_map=urlgen_bucketless&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=tiih6F7o5K0Q7kNvwGeaCLR&_nc_oc=AdpYa1P3oZNuE1IMLjJJzjJ8wqsSb3KJXSh_Sb2E-0JIY4qvR1ZUeP1OOkv7FEHopzc&_nc_zt=23&_nc_ht=scontent-lhr11-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=OJBwP5HGf3kZQzVDFn1OeQ&_nc_tpa=Q5bMBQJusxieqaVfPVh_sm_Pp4aCNCC-bdOygFxY841wCmDXyEWR3oKgoEjh5z_JeQZMKB0UtpU3d1FPtg&_nc_ct=RQosPBUKFQQAAAA&oh=00_AQSF-ljObsuAt9D2tsFFVUtGOs6LiD41VxFRxouyeRUD8A&oe=6B0E1E28",
-   "views": 31,
+   "thumb": "https://scontent-lhr11-1.cdninstagram.com/v/t51.71878-15/927530900_1616403763834286_5519120875822770835_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&_nc_map=urlgen_bucketless&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=2ZZZVluB4LMQ7kNvwFsk6oy&_nc_oc=AdpFmPTnRf2BYMS-5ZYibGBatfmK9-bisy8iRiBmyXA3O1yz9UYD5MZq7RO0i2HLBRQ&_nc_zt=23&_nc_ht=scontent-lhr11-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=gcIJKTozDYIIxZXU1atIdw&_nc_tpa=Q5bMBQJaJ-sC8XtU93RkUUGwEPz8avR83fOI-EoQbuwdZ8zOkPdouf1F1UKVVViaO0BlTorCy9hd0sgDcg&_nc_ct=RQosPBUKFQQAAAA&oh=00_AQVh9sO1fFAdNBZlDE932WkkFiG7TmwFoLURswZof1iuyg&oe=6B0F6FA8",
+   "views": 35,
    "likes": 3,
    "comments": 0,
    "shares": 0,
    "saves": 0,
-   "watch_seconds": 88.3,
-   "avg_watch_seconds": 3.53,
+   "watch_seconds": 95.7,
+   "avg_watch_seconds": 3.42,
    "completion_rate": null,
    "media": "https://static.metricool.com/planner/202611/8247679-file-12558694310699675199.mp4"
   },
