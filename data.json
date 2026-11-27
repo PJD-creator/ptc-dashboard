@@ -4,7 +4,7 @@
   "timezone": "Asia/Singapore",
   "as_of": "2026-11-27",
   "source": "Metricool",
-  "pulled_at": "2026-11-27T15:06:00+08:00",
+  "pulled_at": "2026-11-27T16:02:00+08:00",
   "data_url": "",
   "youtube_source": "Windsor.ai"
  },
@@ -506,6 +506,50 @@
  ],
  "uploads": [
   {
+   "id": "444011975-instagram",
+   "platform": "instagram",
+   "title": "A heart set in gold, made to be treasured 💛✨",
+   "workflow": "Metricool · auto-publish",
+   "scheduled_at": "2026-11-27T15:33:00+08:00",
+   "posted_at": "2026-11-27T15:33:00+08:00",
+   "status": "success",
+   "error": null,
+   "post_url": "https://www.instagram.com/reel/DgPJyzVhDSS/",
+   "media": "https://static.metricool.com/planner/202611/8247679-file-10793375646886642750.mp4",
+   "metrics": null
+  },
+  {
+   "id": "444012003-tiktok",
+   "platform": "tiktok",
+   "title": "Heart Ring in Gold 💛",
+   "workflow": "Metricool · auto-publish",
+   "scheduled_at": "2026-11-27T15:33:00+08:00",
+   "posted_at": "2026-11-27T15:33:00+08:00",
+   "status": "success",
+   "error": null,
+   "post_url": "https://www.tiktok.com/@ptc.sg/video/7712751079917620500",
+   "media": "https://static.metricool.com/planner/202611/8247679-file-3670400790545059082.mp4",
+   "metrics": null
+  },
+  {
+   "id": "444012022-youtube",
+   "platform": "youtube",
+   "title": "Heart Ring in Gold ✨ | Precious Jewellery Designs",
+   "workflow": "Metricool · auto-publish",
+   "scheduled_at": "2026-11-27T15:33:00+08:00",
+   "posted_at": "2026-11-27T15:33:00+08:00",
+   "status": "success",
+   "error": null,
+   "post_url": "https://www.youtube.com/shorts/HEJN6qeXgIk",
+   "media": "https://static.metricool.com/planner/202611/8247679-file-2704642240938474955.mp4",
+   "metrics": {
+    "views": 0,
+    "likes": 0,
+    "comments": 0,
+    "shares": null
+   }
+  },
+  {
    "id": "442878864-instagram",
    "platform": "instagram",
    "title": "Effortless elegance, one golden drop ✨💧",
@@ -553,7 +597,7 @@
    "post_url": "https://www.youtube.com/shorts/m9WySEU9D2o",
    "media": "https://static.metricool.com/planner/202611/8247679-file-9295986310786509901.mp4",
    "metrics": {
-    "views": 32,
+    "views": 34,
     "likes": 0,
     "comments": 0,
     "shares": null
@@ -607,7 +651,7 @@
    "post_url": "https://www.youtube.com/shorts/yswePmy1t9o",
    "media": "https://static.metricool.com/planner/202611/8247679-file-14522259418541003857.mp4",
    "metrics": {
-    "views": 461,
+    "views": 490,
     "likes": 14,
     "comments": 0,
     "shares": null
@@ -661,7 +705,7 @@
    "post_url": "https://www.youtube.com/shorts/2EaMN62nqH8",
    "media": "https://static.metricool.com/planner/202611/8247679-file-11911696167300542856.mp4",
    "metrics": {
-    "views": 297,
+    "views": 305,
     "likes": 6,
     "comments": 0,
     "shares": 1
@@ -750,6 +794,57 @@
  ],
  "posts": [
   {
+   "key": "DgPJyzVhDSS",
+   "platform": "instagram",
+   "published": "2026-11-27T15:33:00+08:00",
+   "title": "A heart set in gold, made to be treasured 💛✨",
+   "url": "https://www.instagram.com/reel/DgPJyzVhDSS/",
+   "thumb": null,
+   "views": null,
+   "likes": null,
+   "comments": null,
+   "shares": null,
+   "saves": null,
+   "watch_seconds": null,
+   "avg_watch_seconds": null,
+   "completion_rate": null,
+   "media": "https://static.metricool.com/planner/202611/8247679-file-10793375646886642750.mp4"
+  },
+  {
+   "key": "7712751079917620500",
+   "platform": "tiktok",
+   "published": "2026-11-27T15:33:00+08:00",
+   "title": "Heart Ring in Gold 💛",
+   "url": "https://www.tiktok.com/@ptc.sg/video/7712751079917620500",
+   "thumb": null,
+   "views": null,
+   "likes": null,
+   "comments": null,
+   "shares": null,
+   "saves": null,
+   "watch_seconds": null,
+   "avg_watch_seconds": null,
+   "completion_rate": null,
+   "media": "https://static.metricool.com/planner/202611/8247679-file-3670400790545059082.mp4"
+  },
+  {
+   "key": "HEJN6qeXgIk",
+   "platform": "youtube",
+   "published": "2026-11-27T07:33:48Z",
+   "title": "Heart Ring in Gold ✨ | Precious Jewellery Designs",
+   "url": "https://www.youtube.com/watch?v=HEJN6qeXgIk",
+   "thumb": "https://i.ytimg.com/vi/HEJN6qeXgIk/hqdefault.jpg",
+   "views": 0,
+   "likes": 0,
+   "comments": 0,
+   "shares": null,
+   "saves": null,
+   "watch_seconds": null,
+   "avg_watch_seconds": null,
+   "completion_rate": null,
+   "media": "https://static.metricool.com/planner/202611/8247679-file-2704642240938474955.mp4"
+  },
+  {
    "key": "DgM2tiehTjX",
    "platform": "instagram",
    "published": "2026-11-26T10:08:46Z",
@@ -773,7 +868,7 @@
    "title": "Pear Drop Pendant ✨ | Precious Jewellery Designs",
    "url": "https://www.youtube.com/watch?v=m9WySEU9D2o",
    "thumb": "https://i.ytimg.com/vi/m9WySEU9D2o/hqdefault.jpg",
-   "views": 32,
+   "views": 34,
    "likes": 0,
    "comments": 0,
    "shares": null,
@@ -824,7 +919,7 @@
    "title": "Blue Flower Ring ✨ | Precious Jewellery Designs",
    "url": "https://www.youtube.com/watch?v=yswePmy1t9o",
    "thumb": "https://i.ytimg.com/vi/yswePmy1t9o/hqdefault.jpg",
-   "views": 461,
+   "views": 490,
    "likes": 14,
    "comments": 0,
    "shares": null,
@@ -875,7 +970,7 @@
    "title": "Leaf Halo Ring ✨ | Precious Jewellery Designs",
    "url": "https://www.youtube.com/watch?v=2EaMN62nqH8",
    "thumb": "https://i.ytimg.com/vi/2EaMN62nqH8/hqdefault.jpg",
-   "views": 297,
+   "views": 305,
    "likes": 6,
    "comments": 0,
    "shares": 1,
