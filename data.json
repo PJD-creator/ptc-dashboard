@@ -4,7 +4,7 @@
   "timezone": "Asia/Singapore",
   "as_of": "2026-11-28",
   "source": "Metricool",
-  "pulled_at": "2026-11-28T06:07:00+08:00",
+  "pulled_at": "2026-11-28T12:10:00+08:00",
   "data_url": "",
   "youtube_source": "Windsor.ai"
  },
@@ -363,7 +363,7 @@
    "date": "2026-11-23",
    "platform": "tiktok",
    "followers_total": 11,
-   "views": 394,
+   "views": 399,
    "likes": 13,
    "comments": 0,
    "shares": 2,
@@ -435,11 +435,11 @@
    "date": "2026-11-25",
    "platform": "tiktok",
    "followers_total": null,
-   "views": 742,
+   "views": 743,
    "likes": 42,
    "comments": 1,
    "shares": 2,
-   "followers_gained": 0,
+   "followers_gained": 2,
    "followers_lost": 0,
    "saves": 0
   },
@@ -447,10 +447,10 @@
    "date": "2026-11-25",
    "platform": "youtube",
    "followers_total": 9,
-   "views": 0,
-   "likes": 0,
+   "views": 320,
+   "likes": 7,
    "comments": 0,
-   "shares": 0,
+   "shares": 1,
    "followers_gained": 0,
    "followers_lost": 0,
    "saves": 0
@@ -471,11 +471,11 @@
    "date": "2026-11-26",
    "platform": "tiktok",
    "followers_total": 13,
-   "views": 149,
-   "likes": 1,
+   "views": 382,
+   "likes": 5,
    "comments": 0,
    "shares": 1,
-   "followers_gained": 1,
+   "followers_gained": 0,
    "followers_lost": 0,
    "saves": 0
   },
@@ -499,6 +499,18 @@
    "likes": 0,
    "comments": 0,
    "shares": 4,
+   "followers_gained": 0,
+   "followers_lost": 0,
+   "saves": 0
+  },
+  {
+   "date": "2026-11-27",
+   "platform": "tiktok",
+   "followers_total": 13,
+   "views": 216,
+   "likes": 5,
+   "comments": 0,
+   "shares": 0,
    "followers_gained": 0,
    "followers_lost": 0,
    "saves": 0
@@ -558,7 +570,12 @@
    "error": null,
    "post_url": "https://www.tiktok.com/@ptc.sg/video/7712751079917620500",
    "media": "https://static.metricool.com/planner/202611/8247679-file-3670400790545059082.mp4",
-   "metrics": null
+   "metrics": {
+    "views": 216,
+    "likes": 5,
+    "comments": 0,
+    "shares": 0
+   }
   },
   {
    "id": "444012022-youtube",
@@ -572,7 +589,7 @@
    "post_url": "https://www.youtube.com/shorts/HEJN6qeXgIk",
    "media": "https://static.metricool.com/planner/202611/8247679-file-2704642240938474955.mp4",
    "metrics": {
-    "views": 78,
+    "views": 87,
     "likes": 3,
     "comments": 0,
     "shares": null
@@ -608,8 +625,8 @@
    "post_url": "https://www.tiktok.com/@ptc.sg/video/7712419696494136596",
    "media": "https://static.metricool.com/planner/202611/8247679-file-11428670039242394335.mp4",
    "metrics": {
-    "views": 149,
-    "likes": 1,
+    "views": 382,
+    "likes": 5,
     "comments": 0,
     "shares": 1
    }
@@ -626,7 +643,7 @@
    "post_url": "https://www.youtube.com/shorts/m9WySEU9D2o",
    "media": "https://static.metricool.com/planner/202611/8247679-file-9295986310786509901.mp4",
    "metrics": {
-    "views": 41,
+    "views": 45,
     "likes": 0,
     "comments": 0,
     "shares": null
@@ -683,7 +700,7 @@
     "views": 510,
     "likes": 15,
     "comments": 0,
-    "shares": null
+    "shares": 1
    }
   },
   {
@@ -716,7 +733,7 @@
    "post_url": "https://www.tiktok.com/@ptc.sg/video/7711926432980618517",
    "media": "https://static.metricool.com/planner/202611/8247679-file-7684431048995777046.mp4",
    "metrics": {
-    "views": 381,
+    "views": 382,
     "likes": 22,
     "comments": 1,
     "shares": 1
@@ -770,7 +787,7 @@
    "post_url": "https://www.tiktok.com/@ptc.sg/video/7711266736175107336",
    "media": "https://static.metricool.com/planner/202611/8247679-file-12558694310699675199.mp4",
    "metrics": {
-    "views": 394,
+    "views": 399,
     "likes": 13,
     "comments": 0,
     "shares": 2
@@ -823,23 +840,6 @@
  ],
  "posts": [
   {
-   "key": "7712751079917620500",
-   "platform": "tiktok",
-   "published": "2026-11-27T15:33:00+08:00",
-   "title": "Heart Ring in Gold 💛",
-   "url": "https://www.tiktok.com/@ptc.sg/video/7712751079917620500",
-   "thumb": null,
-   "views": null,
-   "likes": null,
-   "comments": null,
-   "shares": null,
-   "saves": null,
-   "watch_seconds": null,
-   "avg_watch_seconds": null,
-   "completion_rate": null,
-   "media": "https://static.metricool.com/planner/202611/8247679-file-3670400790545059082.mp4"
-  },
-  {
    "key": "DgPJyzVhDSS",
    "platform": "instagram",
    "published": "2026-11-27T07:34:53Z",
@@ -863,7 +863,7 @@
    "title": "Heart Ring in Gold ✨ | Precious Jewellery Designs",
    "url": "https://www.youtube.com/watch?v=HEJN6qeXgIk",
    "thumb": "https://i.ytimg.com/vi/HEJN6qeXgIk/hqdefault.jpg",
-   "views": 78,
+   "views": 87,
    "likes": 3,
    "comments": 0,
    "shares": null,
@@ -872,6 +872,23 @@
    "avg_watch_seconds": null,
    "completion_rate": null,
    "media": "https://static.metricool.com/planner/202611/8247679-file-2704642240938474955.mp4"
+  },
+  {
+   "key": "7712751079917620500",
+   "platform": "tiktok",
+   "published": "2026-11-27T07:33:17Z",
+   "title": "Heart Ring in Gold 💛",
+   "url": "https://www.tiktok.com/@ptc.sg/video/7712751079917620500",
+   "thumb": "https://p16-common-sign.tiktokcdn.com/tos-alisg-p-4863-sg/oE4sDe2IfnYJTJJgVMtkDIBkMSefQANJMuDIel~tplv-tiktokx-cropcenter-q:300:400:q70.webp?dr=14782&refresh_token=d2b15d16&x-expires=1795906800&x-signature=WnLoJQsbTw1OKe4RNl0gjf8mLUk%3D&t=bacd0480&ps=933b5bde&shp=d05b14bd&shcp=8aecc5ac&idc=my&biz_tag=tt_video&s=TIKTOK_FOR_DEVELOPER&sc=cover",
+   "views": 216,
+   "likes": 5,
+   "comments": 0,
+   "shares": 0,
+   "saves": null,
+   "watch_seconds": 623.0,
+   "avg_watch_seconds": 2.88,
+   "completion_rate": 0.00016200000420212745,
+   "media": "https://static.metricool.com/planner/202611/8247679-file-3670400790545059082.mp4"
   },
   {
    "key": "DgM2tiehTjX",
@@ -897,7 +914,7 @@
    "title": "Pear Drop Pendant ✨ | Precious Jewellery Designs",
    "url": "https://www.youtube.com/watch?v=m9WySEU9D2o",
    "thumb": "https://i.ytimg.com/vi/m9WySEU9D2o/hqdefault.jpg",
-   "views": 41,
+   "views": 45,
    "likes": 0,
    "comments": 0,
    "shares": null,
@@ -913,15 +930,15 @@
    "published": "2026-11-26T10:07:20Z",
    "title": "Pear Drop Pendant 💧",
    "url": "https://www.tiktok.com/@ptc.sg/video/7712419696494136596",
-   "thumb": "https://p16-common-sign.tiktokcdn.com/tos-alisg-p-4863-sg/o41xMAiIEAwa3GwPFBiqIIAFhOE6sXCABAgfA9~tplv-tiktokx-cropcenter-q:300:400:q70.webp?dr=14782&refresh_token=f67b5f45&x-expires=1795802400&x-signature=0BMmSK%2FkjzhkNSacHMudgBmOSwU%3D&t=bacd0480&ps=933b5bde&shp=d05b14bd&shcp=8aecc5ac&idc=my2&sc=cover&biz_tag=tt_video&s=TIKTOK_FOR_DEVELOPER",
-   "views": 149,
-   "likes": 1,
+   "thumb": "https://p16-common-sign.tiktokcdn.com/tos-alisg-p-4863-sg/o41xMAiIEAwa3GwPFBiqIIAFhOE6sXCABAgfA9~tplv-tiktokx-cropcenter-q:300:400:q70.webp?dr=14782&refresh_token=0c612759&x-expires=1795906800&x-signature=yXoQShDa0%2FdAbGuCvCjXB1PBDAk%3D&t=bacd0480&ps=933b5bde&shp=d05b14bd&shcp=8aecc5ac&idc=my&biz_tag=tt_video&s=TIKTOK_FOR_DEVELOPER&sc=cover",
+   "views": 382,
+   "likes": 5,
    "comments": 0,
    "shares": 1,
    "saves": null,
-   "watch_seconds": 427.0,
-   "avg_watch_seconds": 2.87,
-   "completion_rate": 0.00031800001859664915,
+   "watch_seconds": 1122.0,
+   "avg_watch_seconds": 2.94,
+   "completion_rate": 0.0001769999973475933,
    "media": "https://static.metricool.com/planner/202611/8247679-file-11428670039242394335.mp4"
   },
   {
@@ -951,10 +968,10 @@
    "views": 510,
    "likes": 15,
    "comments": 0,
-   "shares": null,
+   "shares": 1,
    "saves": null,
-   "watch_seconds": null,
-   "avg_watch_seconds": null,
+   "watch_seconds": 1020.0,
+   "avg_watch_seconds": 12.75,
    "completion_rate": null,
    "media": "https://static.metricool.com/planner/202611/8247679-file-14522259418541003857.mp4"
   },
@@ -964,15 +981,15 @@
    "published": "2026-11-25T07:36:16Z",
    "title": "Blue Flower Ring 💙",
    "url": "https://www.tiktok.com/@ptc.sg/video/7712009692406353153",
-   "thumb": "https://p16-common-sign.tiktokcdn.com/tos-alisg-p-4863-sg/okQDWDC3hFzRfGOvLifGDCnSEgkfNDSIWAfF7H~tplv-tiktokx-cropcenter-q:300:400:q70.webp?dr=14782&refresh_token=5b808f8c&x-expires=1795802400&x-signature=cNlGyNzK%2Fpzy5%2FanOmyQ65Ax4sw%3D&t=bacd0480&ps=933b5bde&shp=d05b14bd&shcp=8aecc5ac&idc=my2&s=TIKTOK_FOR_DEVELOPER&sc=cover&biz_tag=tt_video",
+   "thumb": "https://p19-common-sign.tiktokcdn.com/tos-alisg-p-4863-sg/okQDWDC3hFzRfGOvLifGDCnSEgkfNDSIWAfF7H~tplv-tiktokx-cropcenter-q:300:400:q70.webp?dr=14782&refresh_token=d8b0133a&x-expires=1795906800&x-signature=g02FfnKQkvpFCPF5NxJtdZkR7C8%3D&t=bacd0480&ps=933b5bde&shp=d05b14bd&shcp=8aecc5ac&idc=my&biz_tag=tt_video&s=TIKTOK_FOR_DEVELOPER&sc=cover",
    "views": 361,
    "likes": 20,
    "comments": 0,
    "shares": 1,
    "saves": null,
-   "watch_seconds": 1151.0,
-   "avg_watch_seconds": 3.19,
-   "completion_rate": 0.00020800000056624411,
+   "watch_seconds": 1156.0,
+   "avg_watch_seconds": 3.2,
+   "completion_rate": 0.0002070000022649765,
    "media": "https://static.metricool.com/planner/202611/8247679-file-15895185945668755199.mp4"
   },
   {
@@ -1004,8 +1021,8 @@
    "comments": 0,
    "shares": 1,
    "saves": null,
-   "watch_seconds": 480.0,
-   "avg_watch_seconds": 17.7778,
+   "watch_seconds": 720.0,
+   "avg_watch_seconds": 15.6522,
    "completion_rate": null,
    "media": "https://static.metricool.com/planner/202611/8247679-file-11911696167300542856.mp4"
   },
@@ -1015,15 +1032,15 @@
    "published": "2026-11-25T02:13:16Z",
    "title": "Leaf Halo Ring ✨",
    "url": "https://www.tiktok.com/@ptc.sg/video/7711926432980618517",
-   "thumb": "https://p19-common-sign.tiktokcdn.com/tos-alisg-p-4863-sg/ogIvAfkMGgA9DoIQCLnEE8BUiBBFIePArvQURQ~tplv-tiktokx-cropcenter-q:300:400:q70.webp?dr=14782&refresh_token=7364b946&x-expires=1795802400&x-signature=3mLieggMAJd2xP%2Bu7cs%2BHMv0inw%3D&t=bacd0480&ps=933b5bde&shp=d05b14bd&shcp=8aecc5ac&idc=my2&biz_tag=tt_video&s=TIKTOK_FOR_DEVELOPER&sc=cover",
-   "views": 381,
+   "thumb": "https://p16-common-sign.tiktokcdn.com/tos-alisg-p-4863-sg/ogIvAfkMGgA9DoIQCLnEE8BUiBBFIePArvQURQ~tplv-tiktokx-cropcenter-q:300:400:q70.webp?dr=14782&refresh_token=b1ebe050&x-expires=1795906800&x-signature=XtwrKY2nWuBz9Y9XMpH9HQR7uqg%3D&t=bacd0480&ps=933b5bde&shp=d05b14bd&shcp=8aecc5ac&idc=my&biz_tag=tt_video&s=TIKTOK_FOR_DEVELOPER&sc=cover",
+   "views": 382,
    "likes": 22,
    "comments": 1,
    "shares": 1,
    "saves": null,
-   "watch_seconds": 1454.0,
-   "avg_watch_seconds": 3.82,
-   "completion_rate": 0.00027400000020861627,
+   "watch_seconds": 1455.0,
+   "avg_watch_seconds": 3.81,
+   "completion_rate": 0.00027200000360608103,
    "media": "https://static.metricool.com/planner/202611/8247679-file-7684431048995777046.mp4"
   },
   {
@@ -1049,15 +1066,15 @@
    "published": "2026-11-23T07:33:17Z",
    "title": "Floral Vine Ring 🌿",
    "url": "https://www.tiktok.com/@ptc.sg/video/7711266736175107336",
-   "thumb": "https://p16-common-sign.tiktokcdn.com/tos-alisg-p-4863-sg/o0rNcCD9gBsEfEi9zB6IcEaAyAvBgqfk6Y7Bik~tplv-tiktokx-cropcenter-q:300:400:q70.webp?dr=14782&refresh_token=1f9e591a&x-expires=1795802400&x-signature=QL4yITr4QuUcQPm0VRVfgqy8JrU%3D&t=bacd0480&ps=933b5bde&shp=d05b14bd&shcp=8aecc5ac&idc=my2&sc=cover&biz_tag=tt_video&s=TIKTOK_FOR_DEVELOPER",
-   "views": 394,
+   "thumb": "https://p16-common-sign.tiktokcdn.com/tos-alisg-p-4863-sg/o0rNcCD9gBsEfEi9zB6IcEaAyAvBgqfk6Y7Bik~tplv-tiktokx-cropcenter-q:300:400:q70.webp?dr=14782&refresh_token=d3168be9&x-expires=1795906800&x-signature=n1qGvH6DxYc96vwCbQW0eaOf5%2Bs%3D&t=bacd0480&ps=933b5bde&shp=d05b14bd&shcp=8aecc5ac&idc=my&sc=cover&biz_tag=tt_video&s=TIKTOK_FOR_DEVELOPER",
+   "views": 399,
    "likes": 13,
    "comments": 0,
    "shares": 2,
    "saves": null,
-   "watch_seconds": 1263.0,
-   "avg_watch_seconds": 3.21,
-   "completion_rate": 0.00022299999371171,
+   "watch_seconds": 1275.0,
+   "avg_watch_seconds": 3.2,
+   "completion_rate": 0.00021999999880790712,
    "media": "https://static.metricool.com/planner/202611/8247679-file-12558694310699675199.mp4"
   },
   {
@@ -1104,9 +1121,9 @@
    "views": 5,
    "likes": 0,
    "comments": 0,
-   "shares": null,
+   "shares": 0,
    "saves": null,
-   "watch_seconds": null,
+   "watch_seconds": 0.0,
    "avg_watch_seconds": null,
    "completion_rate": null,
    "media": null
@@ -1121,9 +1138,9 @@
    "views": 4,
    "likes": 0,
    "comments": 0,
-   "shares": null,
+   "shares": 0,
    "saves": null,
-   "watch_seconds": null,
+   "watch_seconds": 0.0,
    "avg_watch_seconds": null,
    "completion_rate": null,
    "media": null
