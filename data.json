@@ -4,7 +4,7 @@
   "timezone": "Asia/Singapore",
   "as_of": "2026-11-28",
   "source": "Metricool",
-  "pulled_at": "2026-11-28T12:10:00+08:00",
+  "pulled_at": "2026-11-28T18:10:00+08:00",
   "data_url": "",
   "youtube_source": "Windsor.ai"
  },
@@ -589,7 +589,7 @@
    "post_url": "https://www.youtube.com/shorts/HEJN6qeXgIk",
    "media": "https://static.metricool.com/planner/202611/8247679-file-2704642240938474955.mp4",
    "metrics": {
-    "views": 87,
+    "views": 92,
     "likes": 3,
     "comments": 0,
     "shares": null
@@ -643,7 +643,7 @@
    "post_url": "https://www.youtube.com/shorts/m9WySEU9D2o",
    "media": "https://static.metricool.com/planner/202611/8247679-file-9295986310786509901.mp4",
    "metrics": {
-    "views": 45,
+    "views": 46,
     "likes": 0,
     "comments": 0,
     "shares": null
@@ -697,7 +697,7 @@
    "post_url": "https://www.youtube.com/shorts/yswePmy1t9o",
    "media": "https://static.metricool.com/planner/202611/8247679-file-14522259418541003857.mp4",
    "metrics": {
-    "views": 510,
+    "views": 511,
     "likes": 15,
     "comments": 0,
     "shares": 1
@@ -863,7 +863,7 @@
    "title": "Heart Ring in Gold ✨ | Precious Jewellery Designs",
    "url": "https://www.youtube.com/watch?v=HEJN6qeXgIk",
    "thumb": "https://i.ytimg.com/vi/HEJN6qeXgIk/hqdefault.jpg",
-   "views": 87,
+   "views": 92,
    "likes": 3,
    "comments": 0,
    "shares": null,
@@ -914,7 +914,7 @@
    "title": "Pear Drop Pendant ✨ | Precious Jewellery Designs",
    "url": "https://www.youtube.com/watch?v=m9WySEU9D2o",
    "thumb": "https://i.ytimg.com/vi/m9WySEU9D2o/hqdefault.jpg",
-   "views": 45,
+   "views": 46,
    "likes": 0,
    "comments": 0,
    "shares": null,
@@ -965,7 +965,7 @@
    "title": "Blue Flower Ring ✨ | Precious Jewellery Designs",
    "url": "https://www.youtube.com/watch?v=yswePmy1t9o",
    "thumb": "https://i.ytimg.com/vi/yswePmy1t9o/hqdefault.jpg",
-   "views": 510,
+   "views": 511,
    "likes": 15,
    "comments": 0,
    "shares": 1,
